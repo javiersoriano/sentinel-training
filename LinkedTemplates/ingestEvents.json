@@ -26,12 +26,6 @@
             "name": "runPowerShellInline",
             "location": "[resourceGroup().location]",
             "kind": "AzurePowerShell",
-            "identity": {
-                "type": "userAssigned",
-                "userAssignedIdentities": {
-                    "[resourceID('Microsoft.ManagedIdentity/userAssignedIdentities/',variables('identityName'))]": {}
-                }
-            },
             "properties": {
                 "forceUpdateTag": "1",
                 "azPowerShellVersion": "3.0",
