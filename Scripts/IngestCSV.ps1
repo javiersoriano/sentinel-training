@@ -16,7 +16,8 @@ $LogType = "SecurityEvent_CL"
 $TimeStampField = ""
 
 
-# Create two records with the same set of properties to create
+# Download telemetry data and convert from CSV
+Invoke-WebRequest -Uri "https://github.com/javiersoriano/sentinel-training/Telemetry/query_data.csv" -OutFile "query_data.csv"
 $file = "query_data.csv"
 $payload = Import-Csv $file 
 
