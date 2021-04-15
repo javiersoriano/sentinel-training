@@ -17,7 +17,7 @@ $TimeStampField = ""
 
 
 # Download telemetry data and convert from CSV
-Invoke-WebRequest -Uri "https://github.com/javiersoriano/sentinel-training/Telemetry/query_data.csv" -OutFile "query_data.csv"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/query_data.csv" -OutFile "query_data.csv"
 $file = "query_data.csv"
 $payload = Import-Csv $file 
 
