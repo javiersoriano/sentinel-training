@@ -131,13 +131,12 @@
                         "value": "[reference('workspaceCreation').outputs.workspaceIdOutput.value]"
                     },
                     "SharedKey": {
-                        "value": "[reference('workspaceCreation').outputs.workspaceKeyOutput]"
+                        "value": "[reference('workspaceCreation').outputs.workspaceKeyOutput.value]"
                     }
                 }
             }
         }
     ],
-    "outputs": {
-        
+    "outputs": { 
     }
 }
