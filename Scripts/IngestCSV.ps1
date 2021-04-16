@@ -1,25 +1,16 @@
 PARAM(
-    [Parameter(Mandatory=$true)]$CustomerId, # The log lanlyics table you wish to have in ADX
+    [Parameter(Mandatory=$true)]$CustomerId, # The log lanlyics workspace ID
     [Parameter(Mandatory=$true)]$SharedKey # The log lanlyics WorkspaceId
 )
 
-# Replace with your Workspace ID
-#$CustomerId = "---"  
-
-# Replace with your Primary Key
-#$SharedKey = "---"
-
-# Specify the name of the record type that you'll be creating
-$LogType = "SecurityEvent_CL"
-
 # You can use an optional field to specify the timestamp from the data. If the time field is not specified, Azure Monitor assumes the time is the message ingestion time
-$TimeStampField = ""
+#$TimeStampField = ""
 
 
 # Download telemetry data and convert from CSV
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/solarigate_event.csv" -OutFile "query_data.csv"
-$file = "query_data.csv"
-$payload = Import-Csv $file 
+#Invoke-WebRequest -Uri "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/solarigate_event.csv" -OutFile "query_data.csv"
+#$file = "query_data.csv"
+#$payload = Import-Csv $file 
 
 # Create the function to create the authorization signature
 Function Write-OMSLogfile {
@@ -123,8 +114,11 @@ Function Write-OMSLogfile {
     return $returnCode
 }
 
-Function SendToLogA ($eventsData, $eventsTable) {    	
-	#Test Size; Log A limit is 30MB
+Function SendToLogA ($url, $eventsTable) {    	
+	Invoke-WebRequest -Uri $url -OutFile "query_data.csv"
+    $eventsData = Import-Csv "query_data.csv"
+    
+    #Test Size; Log A limit is 30MB
     $tempdata = @()
     $tempDataSize = 0
     
@@ -147,11 +141,17 @@ Function SendToLogA ($eventsData, $eventsTable) {
     Else {          
         $postLAStatus = Write-OMSLogfile -dateTime (Get-Date) -type $eventsTable -logdata $eventsData -CustomerID $CustomerId -SharedKey $SharedKey        
     }
+    
+    Remove-Item "query_data.csv"
 
     return $postLAStatus
 }
 
 # Submit the data to the API endpoint
-$status = SendToLogA -EventsData $payload -EventsTable $LogType
+$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/solarigate_event.csv" -EventsTable "CommonSecurityLog"
+
+Write-Host $status
+
+$status = SendToLogA -EventsData "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/solarigate_event.csv" -EventsTable "SecurityEvent"
 
 Write-Host $status
