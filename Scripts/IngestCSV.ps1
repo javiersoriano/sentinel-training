@@ -155,3 +155,7 @@ Write-Host $status
 $status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/securityEvents.csv" -EventsTable "SecurityEvent"
 
 Write-Host $status
+
+$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/signinLogs.csv" -EventsTable "SigninLogs"
+
+Write-Host $status
