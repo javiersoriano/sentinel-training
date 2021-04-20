@@ -6,7 +6,7 @@
         "config": {
             "isWizard": true,
             "basics": {
-                "description": "**Azure Sentinel All-In-One** deployment, see more information about this project [here](https://github.com/Azure/Azure-Sentinel/Tools/Sentinel-All-In-One/).",
+                "description": "**Azure Sentinel Training Kit**",
                 "location": {
                     "label": "Location",
                     "toolTip": "Location for all resources",
@@ -42,34 +42,6 @@
                     "required": true,
                     "regex": "^[A-Za-z0-9][A-Za-z0-9-]+[A-Za-z0-9]$",
                     "validationMessage": "Only alphanumeric characters are allowed, and the value must be 1-30 characters long."
-                },
-                "visible": true
-            },
-            {
-                "name": "dailyQuota",
-                "type": "Microsoft.Common.TextBox",
-                "label": "Daily ingestion limit in GBs. Enter 0 for no limit.",
-                "placeholder": "",
-                "defaultValue": "0",
-                "toolTip": "This limit doesn't apply to the following tables: SecurityAlert, SecurityBaseline, SecurityBaselineSummary, SecurityDetection, SecurityEvent, WindowsFirewall, MaliciousIPCommunication, LinuxAuditLog, SysmonEvent, ProtectionStatus, WindowsEvent",
-                "constraints": {
-                    "required": true,
-                    "regex": "^[0-9]{1,4}$",
-                    "validationMessage": "Only numbers allowed, and the value must be 1-4 characters long."
-                },
-                "visible": true
-            },
-            {
-                "name": "dataRetention",
-                "type": "Microsoft.Common.TextBox",
-                "label": "Number of days of retention",
-                "placeholder": "",
-                "defaultValue": "90",
-                "toolTip": "Only numbers allowed",
-                "constraints": {
-                    "required": true,
-                    "regex": "([3-8][0-9]|9[0-9]|[1-6][0-9]{2}|7[0-2][0-9]|730)",
-                    "validationMessage": "Retention must be between 30 and 730 days."
                 },
                 "visible": true
             }
