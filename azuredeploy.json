@@ -14,6 +14,12 @@
                 "description": "Daily ingestion limit in GBs. This limit doesn't apply to the following tables: SecurityAlert, SecurityBaseline, SecurityBaselineSummary, SecurityDetection, SecurityEvent, WindowsFirewall, MaliciousIPCommunication, LinuxAuditLog, SysmonEvent, ProtectionStatus, WindowsEvent"
             }
         },
+        "UserName": {
+            "type": "string",
+            "metadata": {
+                "description": "Username used to authenticate the playbook with your Azure Sentinel environment. Could be the current username you're logged in with."
+            }
+        },
         "_artifactsLocation": {
             "type": "string",
             "metadata": {
@@ -97,6 +103,29 @@
                 "parameters": {
                     "workspaceName": {
                         "value": "[parameters('workspaceName')]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "playbook",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-06-01",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments','workspaceCreation')]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[uri(parameters('_artifactsLocation'), 'LinkedTemplates/playbook.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "PlaybookName": {
+                        "value": "Get-GeoFromIpAndTagIncident"
+                    },
+                    "UserName": {
+                        "value": "[parameters('UserName')]"
                     }
                 }
             }
