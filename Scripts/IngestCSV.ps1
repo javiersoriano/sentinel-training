@@ -156,6 +156,10 @@ $status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/senti
 
 Write-Host $status
 
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/signinLogs.csv" -EventsTable "SigninLogs"
+$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/disable_accounts.csv" -EventsTable "SigninLogs"
+
+Write-Host $status
+
+$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/office_activity_inbox_rule.csv" -EventsTable "OfficeActivity"
 
 Write-Host $status
