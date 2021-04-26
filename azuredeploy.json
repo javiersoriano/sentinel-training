@@ -131,6 +131,29 @@
             }
         },
         {
+            "name": "workbook",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-06-01",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments','ingestEvents')]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[uri(parameters('_artifactsLocation'), 'LinkedTemplates/workbook.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "workbookDisplayName": {
+                        "value": "[concat('Investigation Insights - ',parameters('workspaceName'))]"
+                    },
+                    "workbookSourceId": {
+                        "value": "[reference('workspaceCreation').outputs.workspaceResourceIdOutput.value]"
+                    }
+                }
+            }
+        },
+        {
             "type": "Microsoft.OperationalInsights/workspaces/savedSearches",
             "apiVersion": "2020-08-01",
             "name": "[concat(parameters('workspaceName'), '/',uniqueString('solorigate'))]",
