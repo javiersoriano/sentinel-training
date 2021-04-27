@@ -167,3 +167,5 @@ Write-Host $status
 $status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/azure_activity.csv" -EventsTable "AzureActivity"
 
 Write-Host $status
+
+Start-Sleep -Seconds 240
