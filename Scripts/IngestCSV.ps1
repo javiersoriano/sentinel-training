@@ -176,4 +176,4 @@ $status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/senti
 
 Write-Host $status
 
-Start-Sleep -Seconds 240
+Start-Sleep -Seconds 600
