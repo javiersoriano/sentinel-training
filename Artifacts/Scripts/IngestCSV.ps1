@@ -148,31 +148,31 @@ Function SendToLogA ($url, $eventsTable) {
 }
 
 # Submit the data to the API endpoint
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/solarigate_CEFevent.csv" -EventsTable "CommonSecurityLog"
+$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/solarigate_CEFevent.csv" -EventsTable "CommonSecurityLog"
 
 Write-Host $status
 
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/securityEvents.csv" -EventsTable "SecurityEvent"
+$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/securityEvents.csv" -EventsTable "SecurityEvent"
 
 Write-Host $status
 
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/disable_accounts.csv" -EventsTable "SigninLogs"
+$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/disable_accounts.csv" -EventsTable "SigninLogs"
 
 Write-Host $status
 
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/office_activity_inbox_rule.csv" -EventsTable "OfficeActivity"
+$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/office_activity_inbox_rule.csv" -EventsTable "OfficeActivity"
 
 Write-Host $status
 
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/azureActivity_adele.csv" -EventsTable "AzureActivity"
+$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/azureActivity_adele.csv" -EventsTable "AzureActivity"
 
 Write-Host $status
 
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/office_activity.csv" -EventsTable "OfficeActivity"
+$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/office_activity.csv" -EventsTable "OfficeActivity"
 
 Write-Host $status
 
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Telemetry/sign-in_adelete.csv" -EventsTable "SigninLogs"
+$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/sign-in_adelete.csv" -EventsTable "SigninLogs"
 
 Write-Host $status
 
