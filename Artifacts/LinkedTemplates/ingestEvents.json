@@ -30,7 +30,7 @@
                 "forceUpdateTag": "1",
                 "azPowerShellVersion": "3.0",
                 "arguments": "[concat('-CustomerId ', parameters('WorkspaceId'), ' -SharedKey ', parameters('SharedKey'))]",
-                "primaryScriptUri": "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Scripts/IngestCSV.ps1",
+                "primaryScriptUri": "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Scripts/IngestCSV.ps1",
                 "supportingScriptUris": [],
                 "timeout": "PT30M",
                 "cleanupPreference": "OnSuccess",
