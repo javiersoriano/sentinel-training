@@ -16,7 +16,7 @@
         }
     },
     "variables": {
-         "_artifactsLocation": "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts"
+         "_artifactsLocation": "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/"
     },
     "resources": [
         {
@@ -26,7 +26,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[uri(variables('_artifactsLocation'), 'LinkedTemplates/workspace.json')]",
+                    "uri": "[uri(variables('_artifactsLocation'), 'Artifacts/LinkedTemplates/workspace.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
@@ -58,7 +58,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[uri(variables('_artifactsLocation'), 'LinkedTemplates/ingestEvents.json')]",
+                    "uri": "[uri(variables('_artifactsLocation'), 'Artifacts/LinkedTemplates/ingestEvents.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
@@ -81,7 +81,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[uri(variables('_artifactsLocation'), 'LinkedTemplates/alertRules.json')]",
+                    "uri": "[uri(variables('_artifactsLocation'), 'Artifacts/LinkedTemplates/alertRules.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
@@ -101,7 +101,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[uri(variables('_artifactsLocation'), 'LinkedTemplates/playbook.json')]",
+                    "uri": "[uri(variables('_artifactsLocation'), 'Artifacts/LinkedTemplates/playbook.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
@@ -124,7 +124,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[uri(variables('_artifactsLocation'), 'LinkedTemplates/workbook.json')]",
+                    "uri": "[uri(variables('_artifactsLocation'), 'Artifacts/LinkedTemplates/workbook.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
