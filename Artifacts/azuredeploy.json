@@ -39,9 +39,6 @@
                     "dataRetention": {
                         "value": 90
                     },
-                    "immediatePurgeDataOn30Days": {
-                        "value": false
-                    },
                     "location": {
                         "value": "[resourceGroup().location]"
                     }
