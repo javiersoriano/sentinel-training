@@ -5,13 +5,7 @@
         "workspaceName": {
             "type": "string",
             "metadata": {
-                "description": "Name for the Log Analytics workspace"
-            }
-        },
-        "dailyQuota": {
-            "type": "int",
-            "metadata": {
-                "description": "Daily ingestion limit in GBs. This limit doesn't apply to the following tables: SecurityAlert, SecurityBaseline, SecurityBaselineSummary, SecurityDetection, SecurityEvent, WindowsFirewall, MaliciousIPCommunication, LinuxAuditLog, SysmonEvent, ProtectionStatus, WindowsEvent"
+                "description": "The workspace name should include 4-63 letters, digits or '-'. The '-' shouldn't be the first or the last symbol"
             }
         },
         "UserName": {
@@ -19,17 +13,10 @@
             "metadata": {
                 "description": "Username used to authenticate the playbook with your Azure Sentinel environment. Could be the current username you're logged in with."
             }
-        },
-        "_artifactsLocation": {
-            "type": "string",
-            "metadata": {
-                "description": "The location of resources"
-            },
-            "defaultValue": "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/"
         }
     },
     "variables": {
-         
+         "_artifactsLocation": "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts"
     },
     "resources": [
         {
@@ -39,7 +26,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[uri(parameters('_artifactsLocation'), 'LinkedTemplates/workspace.json')]",
+                    "uri": "[uri(variables('_artifactsLocation'), 'LinkedTemplates/workspace.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
@@ -49,14 +36,11 @@
                     "pricingTier": {
                         "value": "PerGB2018"
                     },
-                    "dailyQuota": {
-                        "value": "[parameters('dailyQuota')]"
-                    },
                     "dataRetention": {
                         "value": 90
                     },
                     "immediatePurgeDataOn30Days": {
-                        "value": true
+                        "value": false
                     },
                     "location": {
                         "value": "[resourceGroup().location]"
@@ -74,7 +58,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[uri(parameters('_artifactsLocation'), 'LinkedTemplates/ingestEvents.json')]",
+                    "uri": "[uri(variables('_artifactsLocation'), 'LinkedTemplates/ingestEvents.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
@@ -97,7 +81,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[uri(parameters('_artifactsLocation'), 'LinkedTemplates/alertRules.json')]",
+                    "uri": "[uri(variables('_artifactsLocation'), 'LinkedTemplates/alertRules.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
@@ -117,7 +101,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[uri(parameters('_artifactsLocation'), 'LinkedTemplates/playbook.json')]",
+                    "uri": "[uri(variables('_artifactsLocation'), 'LinkedTemplates/playbook.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
@@ -140,7 +124,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[uri(parameters('_artifactsLocation'), 'LinkedTemplates/workbook.json')]",
+                    "uri": "[uri(variables('_artifactsLocation'), 'LinkedTemplates/workbook.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
