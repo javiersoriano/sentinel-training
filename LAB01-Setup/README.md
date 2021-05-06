@@ -26,12 +26,23 @@ Permissions to create a resource group in your Azure subscription.
     - **Workspace Name**: provide a name for the Azure Sentinel workspace. Please note that the workspace name should include 4-63 letters, digits or '-'. The '-' shouldn't be the first or the last symbol
     - **User Name**: Username used to authenticate the playbook with your Azure Sentinel environment. This can be the current username you're logged in with. For example: user1@contoso.com.
 
-3. Click **Review + create** and then **Create** in the next screen. The deployment will start and should take around **10 minutes** to complete.
-
-4. Once finished, go to the resource group name and you should see the following resources: Log Analytics workspace, SecurityInsights solution, *Get-GeoFromIpAndTagIncident* playbook, *Investigation Insights* workbook. 
+![setup1](./media/setup_1.png)
 
 
+3. Click **Review + create** and then **Create** in the next screen. The deployment will start and should take around **10 minutes** to complete. You should see this screen when it finishes.
 
-## Exercise 2: Configure
+![setup3](./media/setup_3.png)
 
 
+4. Once finished, go to the search bar at the top and type "sentinel", then click on Azure Sentinel .
+
+![setup4](./media/setup_4.png)
+
+
+5. Choose the workspace name that you selected in step #2. 
+
+![setup5](./media/setup_5.png)
+
+6. Congratulations! You have now deployed your Azure Sentinel lab 😊. Your screen should like this:
+
+![setup6](./media/setup_6.png)
