@@ -7,13 +7,13 @@
 
 This exercise guides you through the deployment of the Azure Sentinel environment that will be used in all subsequent modules.
 
-## Prerequisites
+#### Prerequisites
 
 To get started with Azure Sentinel, you must have a Microsoft Azure subscription. If you do not have a subscription, you can sign up for a free account.
 
 Permissions to create a resource group in your Azure subscription. 
 
-## Exercise 1: Deploy Azure Sentinel training ARM template
+### Exercise 1: Deploy Azure Sentinel training ARM template
 
 1. Click on the button below. Make sure that you open it in a new tab so you keep these instructions open.
 
