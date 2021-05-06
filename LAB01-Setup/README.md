@@ -46,3 +46,25 @@ Permissions to create a resource group in your Azure subscription.
 6. Congratulations! You have now deployed your Azure Sentinel lab 😊. Your screen should like this:
 
 ![setup6](./media/setup_6.png)
+
+### Exercise 2: Configure Azure Sentinel Playbook
+
+In this exercise, we will configure a Playbook that will be later used in the lab. This will allow the playbook to access Sentinel.
+
+1. Navigate to the resource group where the lab has been deployed.
+
+2. In the resource group you should see an API Connection resource called *azuresentinel-Get-GeoFromIpAndTagIncident*, click on it.
+
+![playbook1](./media/playbook1.png)
+
+3. Click on Edi *API connection* under *General*.
+
+![playbook2](./media/playbook2.png)
+
+4. Click on *Authorize* and a new window will open to chose an account. Pick the user that you want to authenticate with. This should normally be the same user that you're logged in with.
+
+![playbook3](./media/playbook3.png)
+
+5. Click *Save*.
+
+![playbook4](./media/playbook4.png)
