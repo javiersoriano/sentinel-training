@@ -1,4 +1,4 @@
-# Module 3 - Analytics Rule
+# LAB 03 - Analytics Rule
 
 #### 🎓 Level: 200 (Intermediate)
 #### ⌛ Estimated time to complete this lab: 30 minutes
