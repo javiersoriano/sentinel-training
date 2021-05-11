@@ -56,7 +56,7 @@ This module assumes that you have completed LAB01-Setup part, as the data and th
 
 9. At this point you can ask the Operations team to isolate the hosts affected by this incident.
 
-### Exercise 3: Add IP address to Threat Intelligence
+### Exercise 3: Add IOC to Threat Intelligence
 Now, we will add the IP address related to the incident to our list of IOCs, so we can capture any new occurrences of this IOC in our logs.
 
 1. Go back to *Incidents* view.

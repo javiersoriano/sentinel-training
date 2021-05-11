@@ -11,7 +11,7 @@ This module guides you through the Analytics Rule part in Azure Sentinel, and sh
 
 To get started with Azure Sentinel, you must have a subscription to Microsoft Azure. If you do not have a subscription, you can sign up for a free account.
 
-### Exercise 1: Overview of the Azure Sentinel Analytics Rule
+### Exercise 1: Analytics Rules overview
 1. Open your newly created Azure sentinel instance.
 2. On the left menu navigate to analytics and select **Rule template** section
 3. Review the analytics rules templates that ship with the product.
@@ -26,7 +26,7 @@ To get started with Azure Sentinel, you must have a subscription to Microsoft Az
 9. in the rule logic screen, you have the ability to create or modify the rule KQL query, control of the entity mapping and define the scheduling and lookback time range.
 10. After you reviewwd the rule configuration options, close this page and navigate back to the main azure sentinel Overview screen 
 
-### Exercise 2: Enable Azure Sentinel Microsoft incident creation rule
+### Exercise 2: Enable Microsoft incident creation rule
 
 Azure Sentinel is a cloud-native SIEM and one of the main use cases is to act as  single pane of glass, for alerts and event correlation. 
 For this purpose, and to be able to ingest and surafce Alewrts from Microsoft Security Product Alerts, we create t he we have the **Microsoft incident creation rule**
@@ -49,7 +49,7 @@ In this exercise, we will review this feature and create one example rule twith 
 
 ![review the azure defender rule](../Images/m3-microsoft-creation-rule03.gif?raw=true)
 
-### Exercise 3: Review Azure Sentinel Fusion Rule (Advanced Multistage Attack Detection)
+### Exercise 3: Review Fusion Rule (Advanced Multistage Attack Detection)
 
 Fusion rule is a unique kind of detection rule. With fusion rule Azure Sentinel can automatically detect multistage attacks by identifying combinations of anomalous behaviors and suspicious activities That are observed at various stages of the kill-chain.
 
