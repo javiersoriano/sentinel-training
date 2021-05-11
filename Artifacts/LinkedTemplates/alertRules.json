@@ -46,7 +46,7 @@
             "kind": "Scheduled",
             "location": "[resourceGroup().location]",
             "dependsOn": [
-                "[resourceId('Microsoft.OperationalInsights/workspaces/providers/alertRules',concat(parameters('workspaceName'),'/Microsoft.SecurityInsights/',parameters('fusionRuleGuid')))]"
+                "[resourceId('Microsoft.OperationalInsights/workspaces/providers/alertRules',parameters('workspaceName'),'/Microsoft.SecurityInsights/',parameters('fusionRuleGuid'))]"
             ],
             "properties": {
                 "displayName": "Solorigate Network Beacon",
@@ -128,7 +128,7 @@
             "kind": "Scheduled",
             "location": "[resourceGroup().location]",
             "dependsOn": [
-                "[resourceId('Microsoft.OperationalInsights/workspaces/providers/alertRules',concat(parameters('workspaceName'),'/Microsoft.SecurityInsights/',parameters('mlRuleGuid')))]"
+                "[resourceId('Microsoft.OperationalInsights/workspaces/providers/alertRules',parameters('workspaceName'),'/Microsoft.SecurityInsights/',parameters('mlRuleGuid'))]"
             ],
             "properties": {
                 "displayName": "Sign-ins from IPs that attempt sign-ins to disabled accounts",
@@ -186,7 +186,7 @@
             "kind": "Scheduled",
             "location": "[resourceGroup().location]",
             "dependsOn": [
-                "[resourceId('Microsoft.OperationalInsights/workspaces/providers/alertRules',concat(parameters('workspaceName'),'/Microsoft.SecurityInsights/',parameters('solarigateRuleGuid')))]"
+                "[resourceId('Microsoft.OperationalInsights/workspaces/providers/alertRules',parameters('workspaceName'),'/Microsoft.SecurityInsights/',parameters('solarigateRuleGuid'))]"
             ],
             "properties": {
                 "displayName": "Malicious Inbox Rule - custom",
