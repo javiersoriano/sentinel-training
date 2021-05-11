@@ -46,7 +46,6 @@
             "kind": "Scheduled",
             "location": "[resourceGroup().location]",
             "dependsOn": [
-                "[reference(concat(parameters('workspaceName'),'/Microsoft.SecurityInsights/',parameters('solarigateRuleGuid')))]"
             ],
             "properties": {
                 "displayName": "Solorigate Network Beacon",
