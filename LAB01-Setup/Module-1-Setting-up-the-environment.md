@@ -1,4 +1,4 @@
-# LAB 01 - Setup
+# LAB 01 - Setting up the environment
 
 #### 🎓 Level: 100 (Beginner)
 #### ⌛ Estimated time to complete this lab: 15 minutes
@@ -26,26 +26,26 @@ Permissions to create a resource group in your Azure subscription.
     - **Workspace Name**: provide a name for the Azure Sentinel workspace. Please note that the workspace name should include 4-63 letters, digits or '-'. The '-' shouldn't be the first or the last symbol
     - **User Name**: Username used to authenticate the playbook with your Azure Sentinel environment. This can be the current username you're logged in with. For example: user1@contoso.com.
 
-![setup1](./media/setup_1.png)
+![setup1](../Images/setup_1.png)
 
 
 3. Click **Review + create** and then **Create** in the next screen. The deployment will start and should take around **10 minutes** to complete. You should see this screen when it finishes.
 
-![setup3](./media/setup_3.png)
+![setup3](../Images/setup_3.png)
 
 
 4. Once finished, go to the search bar at the top and type "sentinel", then click on Azure Sentinel .
 
-![setup4](./media/setup_4.png)
+![setup4](../Images/setup_4.png)
 
 
 5. Choose the workspace name that you selected in step #2. 
 
-![setup5](./media/setup_5.png)
+![setup5](../Images/setup_5.png)
 
 6. Congratulations! You have now deployed your Azure Sentinel lab 😊. Your screen should like this:
 
-![setup6](./media/setup_6.png)
+![setup6](../Images/setup_6.png)
 
 ### Exercise 2: Configure Azure Sentinel Playbook
 
@@ -55,16 +55,16 @@ In this exercise, we will configure a Playbook that will be later used in the la
 
 2. In the resource group you should see an API Connection resource called *azuresentinel-Get-GeoFromIpAndTagIncident*, click on it.
 
-![playbook1](./media/playbook1.png)
+![playbook1](../Images/playbook1.png)
 
 3. Click on Edi *API connection* under *General*.
 
-![playbook2](./media/playbook2.png)
+![playbook2](../Images/playbook2.png)
 
 4. Click on *Authorize* and a new window will open to chose an account. Pick the user that you want to authenticate with. This should normally be the same user that you're logged in with.
 
-![playbook3](./media/playbook3.png)
+![playbook3](../Images/playbook3.png)
 
 5. Click *Save*.
 
-![playbook4](./media/playbook4.png)
+![playbook4](../Images/playbook4.png)
