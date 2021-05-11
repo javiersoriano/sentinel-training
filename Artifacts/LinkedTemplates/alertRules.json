@@ -121,12 +121,30 @@
             }
         },
         {
+            "type": "Microsoft.Resources/deploymentScripts",
+            "apiVersion": "2020-10-01",
+            "name": "sleep1",
+            "location": "[resourceGroup().location]",
+            "kind": "AzurePowerShell",
+            "properties": {
+                "forceUpdateTag": "1",
+                "azPowerShellVersion": "3.0",
+                "arguments": "",
+                "scriptContent": "Start-Sleep -Seconds 20",
+                "supportingScriptUris": [],
+                "timeout": "PT30M",
+                "cleanupPreference": "Always",
+                "retentionInterval": "P1D"
+            }
+        },
+        {
             "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules",
             "name": "[concat(parameters('workspaceName'),'/Microsoft.SecurityInsights/',parameters('disabledRuleGuid'))]",
             "apiVersion": "2021-03-01-preview",
             "kind": "Scheduled",
             "location": "[resourceGroup().location]",
             "dependsOn": [
+                "[resourceId('Microsoft.Resources/deploymentScripts','sleep1')]"
             ],
             "properties": {
                 "displayName": "Sign-ins from IPs that attempt sign-ins to disabled accounts",
@@ -134,8 +152,8 @@
                 "severity": "Medium",
                 "enabled": true,
                 "query": "SigninLogs_CL\n    | where ResultType == \"50057\" \n    | where ResultDescription == \"User account is disabled. The account has been disabled by an administrator.\" \n    | summarize StartTime = min(TimeGenerated), EndTime = max(TimeGenerated), disabledAccountLoginAttempts = count(), \n        disabledAccountsTargeted = dcount(UserPrincipalName_s), applicationsTargeted = dcount(AppDisplayName_s), disabledAccountSet = makeset(UserPrincipalName_s), \n        applicationSet = makeset(AppDisplayName_s)\n        by IPAddress, Type\n            | order by disabledAccountLoginAttempts desc\n    | join kind= leftouter (\n        // Consider these IPs suspicious - and alert any related  successful sign-ins\n        SigninLogs_CL\n        | where ResultType == 0\n        | summarize successfulAccountSigninCount = dcount(UserPrincipalName_s), successfulAccountSigninSet = makeset(UserPrincipalName_s, 15) by IPAddress, Type\n        // Assume IPs associated with sign-ins from 100+ distinct user accounts are safe\n        | where successfulAccountSigninCount < 100\n        )\n        on IPAddress \n            | where successfulAccountSigninCount != 0\n    | project StartTime, EndTime, IPAddress, disabledAccountLoginAttempts, disabledAccountsTargeted, disabledAccountSet, applicationSet, \n        successfulAccountSigninCount, successfulAccountSigninSet, Type\n    | order by disabledAccountLoginAttempts\n    | extend timestamp = StartTime, IPCustomEntity = IPAddress",
-                "queryFrequency": "P1D",
-                "queryPeriod": "P1D",
+                "queryFrequency": "PT6H",
+                "queryPeriod": "PT6H",
                 "triggerOperator": "GreaterThan",
                 "triggerThreshold": 0,
                 "suppressionDuration": "PT5H",
@@ -178,12 +196,30 @@
             }
         },
         {
+            "type": "Microsoft.Resources/deploymentScripts",
+            "apiVersion": "2020-10-01",
+            "name": "sleep2",
+            "location": "[resourceGroup().location]",
+            "kind": "AzurePowerShell",
+            "properties": {
+                "forceUpdateTag": "1",
+                "azPowerShellVersion": "3.0",
+                "arguments": "",
+                "scriptContent": "Start-Sleep -Seconds 20",
+                "supportingScriptUris": [],
+                "timeout": "PT30M",
+                "cleanupPreference": "Always",
+                "retentionInterval": "P1D"
+            }
+        },
+        {
             "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules",
             "name": "[concat(parameters('workspaceName'),'/Microsoft.SecurityInsights/',parameters('mlRuleGuid'))]",
             "apiVersion": "2021-03-01-preview",
             "kind": "Scheduled",
             "location": "[resourceGroup().location]",
             "dependsOn": [
+                "[resourceId('Microsoft.Resources/deploymentScripts','sleep2')]"
             ],
             "properties": {
                 "displayName": "Malicious Inbox Rule - custom",
