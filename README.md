@@ -14,7 +14,7 @@ These labs help you get ramped up with Azure Sentinel and provide hands-on pract
 ## Modules
 
 [**Module 1 – Setting up the environment**](./Modules/Module-1-Setting-up-the-environment.md)
-- [Deploy Azure Sentinel Labs ARM template](.Modules/Module-1-Setting-up-the-environment.md#exercise-1-deploy-azure-sentinel-labs-arm-template)
+- [Deploy Azure Sentinel Labs ARM template](./Modules/Module-1-Setting-up-the-environment.md#exercise-1-deploy-azure-sentinel-labs-arm-template)
 - [Configure Azure Sentinel Playbook](./Modules/Module-1-Setting-up-the-environment.md#exercise-2-configure-azure-sentinel-playbook)
  
 [**Module 2 – Data Connectors**](./Modules/Module-2-Data-Connectors.md)

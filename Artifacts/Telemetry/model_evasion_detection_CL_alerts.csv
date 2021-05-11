@@ -1,5 +1,5 @@
-﻿SourceSystem,MG,ManagementGroupName,Computer,RawData,response,logging_time,input_transformed,response,attack_name,attack_id,label,state,input_repr,output,label,account,host,client_ip,client_id__id,client_id_AadTenantId,client_id_AadUserId,client_didisplayName,client_id_Type,timestamp,client_id,model_input,model_output,model_output_label,model_id,model_evasioncore,Type,_ResourceId,AccountCustomEntity,HostCustomEntity,IPCustomEntity
-RestAPI,,,,,,,,,,,,,,,,sarah@contoso.com,creditCard--contoso-8o3b,79.23.11.201,,,,,,"Sat, 24 Apr 2021 12:00:03 AM GMT",,"[
+﻿SourceSystem,MG,ManagementGroupName,Computer,RawData,response,logging_time,input_transformed,attack_name,attack_id,label,state,input_repr,output,account,host,client_ip,client_id__id,client_id_AadTenantId,client_id_AadUserId,client_didisplayName,client_id_Type,timestamp,client_id,model_input,model_output,model_output_label,model_id,model_evasioncore,Type,_ResourceId,AccountCustomEntity,HostCustomEntity,IPCustomEntity
+RestAPI,,,,,,,,,,,,,,sarah@contoso.com,creditCard--contoso-8o3b,79.23.11.201,,,,,,"Sat, 24 Apr 2021 12:00:03 AM GMT",,"[
   0.45317148657463768,
   0.23569957108337528,
   0.90806275854275664,
@@ -19,7 +19,7 @@ RestAPI,,,,,,,,,,,,,,,,sarah@contoso.com,creditCard--contoso-8o3b,79.23.11.201,,
 ]","[
   0.07
 ]",0,fraud_detection,0.9921,model_evasion_detection_CL,,sarah@contoso.com,creditCard--contoso-8o3b,79.23.11.201
-RestAPI,,,,,,,,,,,,,,,,sarah@contoso.com,creditCard--contoso-8o3b,79.23.11.201,,,,,,"Sat, 17 Apr 2021 12:00:02 AM GMT",,"[
+RestAPI,,,,,,,,,,,,,,sarah@contoso.com,creditCard--contoso-8o3b,79.23.11.201,,,,,,"Sat, 17 Apr 2021 12:00:02 AM GMT",,"[
   0.56409261463617644,
   0.89661731737841521,
   0.10886158965098028,
@@ -39,7 +39,7 @@ RestAPI,,,,,,,,,,,,,,,,sarah@contoso.com,creditCard--contoso-8o3b,79.23.11.201,,
 ]","[
   0.07
 ]",0,fraud_detection,0.9921,model_evasion_detection_CL,,sarah@contoso.com,creditCard--contoso-8o3b,79.23.11.201
-RestAPI,,,,,,,,,,,,,,,,sarah@contoso.com,creditCard--contoso-8o3b,79.23.11.201,,,,,,"Sat, 10 Apr 2021 12:00:03 AM GMT",,"[
+RestAPI,,,,,,,,,,,,,,sarah@contoso.com,creditCard--contoso-8o3b,79.23.11.201,,,,,,"Sat, 10 Apr 2021 12:00:03 AM GMT",,"[
   0.91113462994445515,
   0.4413776544187703,
   0.55624806860058318,
@@ -59,7 +59,7 @@ RestAPI,,,,,,,,,,,,,,,,sarah@contoso.com,creditCard--contoso-8o3b,79.23.11.201,,
 ]","[
   0.07
 ]",0,fraud_detection,0.9921,model_evasion_detection_CL,,sarah@contoso.com,creditCard--contoso-8o3b,79.23.11.201
-RestAPI,,,,,,,,,,,,,,,,sarah@contoso.com,creditCard--contoso-8o3b,79.23.11.201,,,,,,"Sat, 01 May 2021 12:00:03 AM GMT",,"[
+RestAPI,,,,,,,,,,,,,,sarah@contoso.com,creditCard--contoso-8o3b,79.23.11.201,,,,,,"Sat, 01 May 2021 12:00:03 AM GMT",,"[
   0.76654221288186242,
   0.62306528178846676,
   0.028095819745222773,
