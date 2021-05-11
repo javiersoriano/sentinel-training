@@ -45,7 +45,9 @@
             "apiVersion": "2021-03-01-preview",
             "kind": "Scheduled",
             "location": "[resourceGroup().location]",
-            "dependsOn": [],
+            "dependsOn": [
+                "[resourceId('Microsoft.OperationalInsights/workspaces/providers/alertRules',parameters('fusionRuleGuid'))]"
+            ],
             "properties": {
                 "displayName": "Solorigate Network Beacon",
                 "description": "Identifies a match across various data feeds for domains IOCs related to the Solorigate incident.\n References: https://blogs.microsoft.com/on-the-issues/2020/12/13/customers-protect-nation-state-cyberattacks/, \n https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html?1",
@@ -125,7 +127,9 @@
             "apiVersion": "2021-03-01-preview",
             "kind": "Scheduled",
             "location": "[resourceGroup().location]",
-            "dependsOn": [],
+            "dependsOn": [
+                "[resourceId('Microsoft.OperationalInsights/workspaces/providers/alertRules',parameters('mlRuleGuid'))]"
+            ],
             "properties": {
                 "displayName": "Sign-ins from IPs that attempt sign-ins to disabled accounts",
                 "description": "Identifies IPs with failed attempts to sign in to one or more disabled accounts signed in successfully to another account.\nReferences: https://docs.microsoft.com/azure/active-directory/reports-monitoring/reference-sign-ins-error-codes\n50057 - User account is disabled. The account has been disabled by an administrator.",
@@ -181,7 +185,9 @@
             "apiVersion": "2021-03-01-preview",
             "kind": "Scheduled",
             "location": "[resourceGroup().location]",
-            "dependsOn": [],
+            "dependsOn": [
+                "[resourceId('Microsoft.OperationalInsights/workspaces/providers/alertRules',parameters('solarigateRuleGuid'))]"
+            ],
             "properties": {
                 "displayName": "Malicious Inbox Rule - custom",
                 "description": "This rule is detecting on delete all traces of phishing email from user mailboxes",

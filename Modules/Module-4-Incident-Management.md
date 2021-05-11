@@ -39,7 +39,7 @@ we have 2 opetion to open the workbook:
 
 6. Review the dashbaord.
 
-### Exercise 2: handling Incident **"Sign-ins from IPs that attempt sign-ins to disabled accounts"**
+### Exercise 2: Handling Incident **"Sign-ins from IPs that attempt sign-ins to disabled accounts"**
 
 1. Open Azure Aentiel incident page.
 2. Locate the incident **"Sign-ins from IPs that attempt sign-ins to disabled accounts"**
