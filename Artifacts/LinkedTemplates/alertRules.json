@@ -180,13 +180,33 @@
             }
         },
         {
+            "dependsOn": [
+                "[resourceId('Microsoft.OperationalInsights/workspaces/providers/alertRules', parameters('workspaceName'), 'Microsoft.SecurityInsights', parameters('disabledRuleGuid'))]"
+            ],
+            "type": "Microsoft.Resources/deploymentScripts",
+            "apiVersion": "2020-10-01",
+            "name": "sleep",
+            "location": "[resourceGroup().location]",
+            "kind": "AzurePowerShell",
+            "properties": {
+                "forceUpdateTag": "1",
+                "azPowerShellVersion": "3.0",
+                "arguments": "",
+                "scriptContent": "Start-Sleep -Seconds 1",
+                "supportingScriptUris": [],
+                "timeout": "PT5M",
+                "cleanupPreference": "Always",
+                "retentionInterval": "P1D"
+            }
+        },
+        {
             "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules",
             "name": "[concat(parameters('workspaceName'),'/Microsoft.SecurityInsights/',parameters('mlRuleGuid'))]",
             "apiVersion": "2021-03-01-preview",
             "kind": "Scheduled",
             "location": "[resourceGroup().location]",
             "dependsOn": [
-                "[resourceId('Microsoft.OperationalInsights/workspaces/providers/alertRules', parameters('workspaceName'), 'Microsoft.SecurityInsights', parameters('disabledRuleGuid'))]"
+                "[resourceId('Microsoft.Resources/deploymentScripts', 'sleep')]"
             ],
             "properties": {
                 "displayName": "Malicious Inbox Rule - custom",
