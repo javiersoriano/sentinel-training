@@ -1,11 +1,11 @@
-# LAB 01 - Setting up the environment
+# Module 1 - Setting up the environment
 
 #### 🎓 Level: 100 (Beginner)
 #### ⌛ Estimated time to complete this lab: 15 minutes
 
 ## Objectives
 
-This exercise guides you through the deployment of the Azure Sentinel environment that will be used in all subsequent modules.
+This module guides you through the deployment of the Azure Sentinel environment that will be used in all subsequent modules.
 
 #### Prerequisites
 

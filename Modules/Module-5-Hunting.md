@@ -1,9 +1,9 @@
-# LAB 05 - SOC Analyst track - Incident Managment 2
+# Module 5 - Hunting
 
 #### 🎓 Level: 300 (Intermediate)
 #### ⌛ Estimated time to complete this lab: 40 minutes
 
-This exercise will guide you through a basic incident handling task in Azure Sentinel. This includes pivoting to hunting to collect additional evidence.
+This module will guide you through a basic incident handling task in Azure Sentinel. This includes pivoting to hunting to collect additional evidence.
 
 #### Prerequisites
 This module assumes that you have completed LAB01-Setup part, as the data and the artifacts that we will be using in this module need to be deployed on your Azure Sentinel instance.

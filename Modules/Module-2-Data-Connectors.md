@@ -1,11 +1,11 @@
-# LAB 02 - Data Connectors
+# Module 2 - Data Connectors
 
 #### 🎓 Level: 100 (Beginner)
 #### ⌛ Estimated time to complete this lab: 15 minutes
 
 ## Objectives
 
-In this guide you will learn how to enable Data Connectors in Azure Sentinel to bring alerts and/or telemtry from different sources.
+In this module you will learn how to enable Data Connectors in Azure Sentinel to bring alerts and/or telemtry from different sources.
 
 #### Prerequisites
 

@@ -1,11 +1,11 @@
-# LAB 03 - Analytics Rule
+# Module 3 - Analytics Rules
 
 #### 🎓 Level: 200 (Intermediate)
 #### ⌛ Estimated time to complete this lab: 30 minutes
 
 ## Objectives
 
-This exercise guides you through the Analytics Rule part in Azure Sentinel, and shows you how to create diffrent type of rules (Security Detections)
+This module guides you through the Analytics Rule part in Azure Sentinel, and shows you how to create diffrent type of rules (Security Detections)
 
 #### Prerequisites
 

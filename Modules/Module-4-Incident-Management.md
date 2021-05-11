@@ -1,9 +1,9 @@
-# LAB 04 - SOC Analyst track - Incident Managment 1 
+# Module 4 - Incident Managment
 
 #### 🎓 Level: 300 (Intermediate)
 #### ⌛ Estimated time to complete this lab: 40 minutes
 
-This exercise guides you through the SOC Analyst objects and Rule and train you how to use Azure sentinel tools and features in an incident response drill.
+This module guides you through the SOC Analyst objects and Rule and train you how to use Azure sentinel tools and features in an incident response drill.
 
 #### Prerequisites
 This module relay on completing LAB01-Setup part, as the data and the artifacts that we will be using in this module need to be deployed on your sentinel instance.

@@ -13,9 +13,9 @@ These labs help you get ramped up with Azure Sentinel and provide hands-on pract
 
 ## Modules
 
-[**Module 1 – Setting up the environment**](./Modules/Module-1-Setting-up-the-Environment.md)
+[**Module 1 – Setting up the environment**](./Modules/Module-1-Setting-up-the-environment.md)
  
-[**Module 2 – Data Connectors**](./Modules/Module-2-Exploring-Azure-Security-Center.md)
+[**Module 2 – Data Connectors**](./Modules/Module-2-Data-Connectors.md)
 
 [**Module 3 – Analytics Rules**](./Modules/Module-3-Analytics-Rules.md)
 
