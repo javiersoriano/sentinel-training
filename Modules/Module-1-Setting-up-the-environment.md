@@ -29,7 +29,7 @@ Permissions to create a resource group in your Azure subscription.
 ![setup1](../Images/setup_1.png)
 
 
-3. Click **Review + create** and then **Create** in the next screen. The deployment will start and should take around **10 minutes** to complete. You should see this screen when it finishes.
+3. Click **Review + create** and then **Create** in the next screen. The deployment will start and should take around **15 minutes** to complete. You should see this screen when it finishes.
 
 ![setup3](../Images/setup_3.png)
 
