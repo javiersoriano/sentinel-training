@@ -6,7 +6,7 @@
 This module will guide you through a basic incident handling task in Azure Sentinel. This includes pivoting to hunting to collect additional evidence.
 
 #### Prerequisites
-This module assumes that you have completed LAB01-Setup part, as the data and the artifacts that we will be using in this module need to be deployed on your Azure Sentinel instance.
+This module assumes that you have completed [Module 1](Module-1-Setting-up-the-environment.md), as the data and the artifacts that we will be using in this module need to be deployed on your Azure Sentinel instance.
 
 ### Exercise 1: Acknowldge incident
 
@@ -20,7 +20,7 @@ This module assumes that you have completed LAB01-Setup part, as the data and th
 
 ![incident2](../Images/incident2.png)
 
-4. Read the description of the incident. As you can see, an IOC related to Solorigate attack has been found. In this case, there is a host involved.
+4. Read the description of the incident. As you can see, an IOC related to Solorigate attack has been found. In this case, host **ClientPC** is involved.
 
 ### Exercise 2: Hunting for more evidence
 
@@ -34,11 +34,11 @@ This module assumes that you have completed LAB01-Setup part, as the data and th
 
 ![incident4](../Images/incident4.png)
 
-4. You should see two results. Click on *View Results*
+4. You should see a total of three results. Click on *View Results*
 
 ![incident5](../Images/incident5.png)
 
-5. As you can see, there's two additional computers where the malicious DLL and named pipe has been found. Bookmark these two records, selecting them and then click on on *Add bookmark*.
+5. As you can see, besides **ClienPC**, there's two additional computers where the malicious DLL and named pipe has been found. Bookmark all three records, selecting them and then click on on *Add bookmark*.
 
 ![incident6](../Images/incident6.png)
 
