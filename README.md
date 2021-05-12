@@ -18,9 +18,9 @@ These labs help you get ramped up with Azure Sentinel and provide hands-on pract
 - [Configure Azure Sentinel Playbook](./Modules/Module-1-Setting-up-the-environment.md#exercise-2-configure-azure-sentinel-playbook)
  
 [**Module 2 – Data Connectors**](./Modules/Module-2-Data-Connectors.md)
-- [Enable Azure Activity data connector](.Modules/Module-2-Data-Connectors.md#exercise-1-enable-azure-activity-data-connector)
-- [Enable Azure Defender data connector](.Modules/Module-2-Data-Connectors.md#exercise-2-enable-azure-defender-data-connector)
-- [Enable Threat Intelligence TAXII data connector](.Modules/Module-2-Data-Connectors.md#exercise-3-enable-threat-intelligence-taxii-data-connector)
+- [Enable Azure Activity data connector](./Modules/Module-2-Data-Connectors.md#exercise-1-enable-azure-activity-data-connector)
+- [Enable Azure Defender data connector](./Modules/Module-2-Data-Connectors.md#exercise-2-enable-azure-defender-data-connector)
+- [Enable Threat Intelligence TAXII data connector](./Modules/Module-2-Data-Connectors.md#exercise-3-enable-threat-intelligence-taxii-data-connector)
 
 [**Module 3 – Analytics Rules**](./Modules/Module-3-Analytics-Rules.md)
 - [Analytics Rules overview](./Modules/Module-3-Analytics-Rules.md#exercise-1-analytics-rules-overview)
