@@ -68,3 +68,5 @@ In this exercise, we will configure a Playbook that will be later used in the la
 5. Click *Save*.
 
 ![playbook4](../Images/playbook4.png)
+
+**[Continue to Module 2](./Module-2-Data-Connectors.md)**

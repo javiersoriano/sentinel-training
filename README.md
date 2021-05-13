@@ -7,6 +7,12 @@
 ## Introduction
 These labs help you get ramped up with Azure Sentinel and provide hands-on practical experience for product features, capabilities, and scenarios. 
 
+The lab deploys an Azure Sentinel workspace and ingests pre-recorded data to simulate scenarios that showcase various Azure Sentinel features. The cost of the deployed resources is very small due to the size of the data ~10 MBs and the fact that Azure Sentinel offers a 30-day free trial.
+
+## Prerequisites
+
+To deploy Azure Sentinel Labs, **you must have a Microsoft Azure subscription**. If you do not have an existing Azure subscription, you can sign up for a free trial [here](https://azure.microsoft.com/en-us/free/).
+
 ## Last release notes
 
 * Version 0.1 - Azure Sentinel Labs **Beta** 

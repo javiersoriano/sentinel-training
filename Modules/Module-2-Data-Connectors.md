@@ -88,3 +88,5 @@ This exercise shows you how to enable the Threat Intelligence - TAXII data conne
 4. Click *Add* and wait until the operation completes.
 
 5. Click on *Next Steps* at the top of the page and explore what content is available for this connector. In a few seconds, the ThreatIntelligenceIndicator will be populated with IOCs from Anomali's feed.
+
+**[Continue to Module 3](./Module-3-Analytics-Rules.md)**

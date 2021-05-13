@@ -167,3 +167,6 @@ Let's review the incident that6 created from this analytics rule.
 ![entity mapping](../Images/m3-incident_entity.gif?raw=true)
 
 7. press on the entity **"AdeleV@contoso.OnMicrosoft.com"** this action will navigate us to the user entity page, this page will give us holistic view on the user entity, with all its activity and related alerts.
+
+
+**[Continue to Module 4](./Module-4-Incident-Management.md)**

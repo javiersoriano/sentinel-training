@@ -110,3 +110,4 @@ in a real life SOC this operation will run automatically, but for this lab we wa
 M5-close-incident
 
 
+**[Continue to Module 5](./Module-5-Hunting.md)**
