@@ -44,3 +44,5 @@ To deploy Azure Sentinel Labs, **you must have a Microsoft Azure subscription**.
 - [Hand over incident](./Modules/Module-5-Hunting.md#exercise-4-hand-over-incident)
  
 [**Module 6 – Watchlists**](./Modules/Module-6-Watchlists.md)
+- [Create a Watchlist](./Modules/Module-6-Watchlists.md#exercise-1-create-a-watchlist)
+- [Whitelist IP addresses in the analytics rule](./Modules/Module-6-Watchlists.md#exercise-2-whitelist-ip-addresses-in-the-analytics-rule)

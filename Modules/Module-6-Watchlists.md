@@ -14,30 +14,50 @@ You have received a message from the SOC manager, informing you about a penetrat
 
 1. From Azure Sentinel portal, go to Watchlists menu and click *Add new*.
 
+![watchlists](../Images/watchlists1.png)
+
 2. In the watchlist wizard enter the following and click *Next: Source*:
 
     - Name: **PenTestsIPaddresses**
     - Description: **IP addresses used during penetration tests**
     - Watchlist Alias: **PenTestIPaddresses**
 
+![watchlists](../Images/watchlists2.png)
+
 3. Download the [CSV file](../Artifacts/Telemetry/PenTestsIPaddresses.csv) to your desktop. 
 
 4. In the watchlist wizard, upload the file from your desktop, check the *Results Preview* and click *Next: Review and Create*.
+
+![watchlists](../Images/watchlists3.png)
 
 5. Click *Create* to finish the wizard.
 
 6. You are brought back to the Watchlists screen, where you see your newly created watchlist. Click on it and then click on *View in Log Analytics*. 
 
+![watchlists](../Images/watchlists4.png)
+
 7. You should see the following screen. From the same logs screen you can also run *_GetWatchlistAlias*, which will return all defined watchlists.
+
+![watchlists](../Images/watchlists5.png)
 
 ### Exercise 2: Whitelist IP addresses in the analytics rule
 
 1. Go to *Analytics*, then *Templates* and search for "High count of connections". Select the "High count of connections by client IP on many ports" rule and click on *Create rule*.
 
+![watchlists](../Images/watchlists6.png)
+
 2. In the *Set rule logic* step of the wizard, expand the query window.
+
+![watchlists](../Images/watchlists7.png)
 
 3. Add the following KQL statement that brings the IPAddress field from the "PenTestsIPaddresses" watchlist: *let PenTestIPaddresses = _GetWatchlist('PenTestIPaddresses') | project IPAddress;*
 
+![watchlists](../Images/watchlists8.png)
+
 4. Now add an additional *where* statement to discard records where the client IP address (cIP field) matches one of the IP addresses in the watchlist. The statement is: *| where cIP !in (PenTestIPaddresses)*
 
+![watchlists](../Images/watchlists9.png)
+
 5. Continue through the wizard and save the modified rule.
+
+![watchlists](../Images/watchlists10.png)
