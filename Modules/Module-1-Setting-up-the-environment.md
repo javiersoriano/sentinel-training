@@ -1,7 +1,7 @@
 # Module 1 - Setting up the environment
 
 #### 🎓 Level: 100 (Beginner)
-#### ⌛ Estimated time to complete this lab: 15 minutes
+#### ⌛ Estimated time to complete this lab: 20 minutes
 
 ## Objectives
 

@@ -9,7 +9,7 @@ This module guides you through the Analytics Rule part in Azure Sentinel, and sh
 
 #### Prerequisites
 
-To get started with Azure Sentinel, you must have a subscription to Microsoft Azure. If you do not have a subscription, you can sign up for a free account.
+This module assumes that you have completed [Module 1](Module-1-Setting-up-the-environment.md), as the data and the artifacts that we will be using in this module need to be deployed on your Azure Sentinel instance.
 
 ### Exercise 1: Analytics Rules overview
 1. Open your newly created Azure sentinel instance.

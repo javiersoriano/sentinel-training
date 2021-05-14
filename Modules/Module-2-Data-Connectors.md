@@ -9,6 +9,8 @@ In this module you will learn how to enable Data Connectors in Azure Sentinel to
 
 #### Prerequisites
 
+This module assumes that you have completed [Module 1](Module-1-Setting-up-the-environment.md), as you will need an Azure Sentinel workspace provisioned.
+
 Some of the data connectors that will be used in this lab, require some specific permissions on the workspace or your azure subscription. If you don't have the appropriate permissions, you can still continue doing the rest of the labs.
 
 ### Exercise 1: Enable Azure Activity data connector

@@ -8,7 +8,7 @@ This module will guide you through a basic incident handling task in Azure Senti
 #### Prerequisites
 This module assumes that you have completed [Module 1](Module-1-Setting-up-the-environment.md), as the data and the artifacts that we will be using in this module need to be deployed on your Azure Sentinel instance.
 
-### Exercise 1: Acknowldge incident
+### Exercise 1: Acknowledge incident
 
 1. If not already there, navigate to *Incidents* view in Azure Sentinel
 
@@ -89,5 +89,4 @@ We will now prepare the incident for handover to forensics team.
 4. At this point you would hand over the incident to forensics team.
 
 
-
-
+**[Continue to Module 6](./Module-6-Watchlists.md)**

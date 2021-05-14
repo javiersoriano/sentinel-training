@@ -1,17 +1,21 @@
 # Module 4 - Incident Managment
 
 #### 🎓 Level: 300 (Intermediate)
-#### ⌛ Estimated time to complete this lab: 40 minutes
+#### ⌛ Estimated time to complete this lab: 30 minutes
 
 This module guides you through the SOC Analyst objects and Rule and train you how to use Azure sentinel tools and features in an incident response drill.
 
 #### Prerequisites
-This module relay on completing LAB01-Setup part, as the data and the artifacts that we will be using in this module need to be deployed on your sentinel instance.
+
+This module assumes that you have completed [Module 1](Module-1-Setting-up-the-environment.md), as the data and the artifacts that we will be using in this module need to be deployed on your Azure Sentinel instance.
 
 ### Exercise 1: Review Azure Sentinel incident tools and capabilities
+
 As a SOC analyst the entry point to consume Security incidents(tickets) in Sentinel is the Incident page.
+
 1.  in the left navigation menu press on the incident and open the incident page.
 this page will show by default all the open incident in the last 24hr.
+
 2. When we want to change the time window, present only incident from specific severity or to see also closed incident, we can use the filters bar
 
 
