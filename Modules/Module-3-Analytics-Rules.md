@@ -24,7 +24,7 @@ This module assumes that you have completed [Module 1](Module-1-Setting-up-the-e
 7. Review the rule defintion like tactics and severity.
 8. Press **Next: Set rule logic** in the bottom of the page 
 9. in the rule logic screen, you have the ability to create or modify the rule KQL query, control of the entity mapping and define the scheduling and lookback time range.
-10. After you reviewwd the rule configuration options, close this page and navigate back to the main azure sentinel Overview screen 
+10. After you reviewed the rule configuration options, close this page and navigate back to the main azure sentinel Overview screen 
 
 ### Exercise 2: Enable Microsoft incident creation rule
 
@@ -124,7 +124,7 @@ or SubjectOrBodyContainsWords has_any (Keywords)
 12. Under the **Alert enrichment (Preview)**, expend the entity mapping section that will need to map our filed to well-known buckets
 	- In the **Entity type** open the supported list of entities and select **Account** in the identifier select **FullName** and map it to **UserId__s**
 	- Press **+ Add new entity** and this time select **Host** entity in the identifier select **FullName** and map it to **OriginatingServer_s**
-	- Select  **Address** and map it to **ClientIPAddress** value.
+	- Press **+ Add new entity**, select **IP** entity, in the identifier select  **Address** and map it to **ClientIPAddress** value.
 
 Your mapping should look like the above:
 	
@@ -139,7 +139,7 @@ To make your SOC, more productive, save analyst time and affectively triage newl
 4. In the **Query scheduling** set the **run query every** to **5 minutes** and the **Lookup data to last 12 Hours** (This scheduling are not ideal for production environment and should be tune).
 5. In the **Suppression** leave it on **Off**
 6. Press the **Next:Incident settings(Preview)** 
-7. As your SOC is under stuff and we want to reduce the number of alerts and be sure that when analyst handle a specific incident, he Will see all related events or other incidents related to the same attack story, for that we will **implement Alert grouping** feature. to do so, follow the above steps: 
+7. As your SOC is under stress, we want to reduce the number of alerts and be sure that when analyst handle a specific incident, he/she will see all related events or other incidents related to the same attack story. For that we will **implement Alert grouping** feature. to do so, follow the above steps: 
 
 - In the **Incident settings (Preview)** under **Alert grouping** change it to **Enabled**.
 - Modify the **Limit the group to alerts created within the selected time frame** to **12 hours**.
@@ -151,13 +151,13 @@ To make your SOC, more productive, save analyst time and affectively triage newl
 ### Exercise 4: Review the produce Security incident.
 	
 After we created the custom analytics rule that detect us for  malicious inbox rule rules.
-Let's review the incident that6 created from this analytics rule.
+Let's review the incident that was created from this analytics rule.
 	
 1. On the main Azure Sentinel main page, select **incidents** and review the incident page
 2. Locate a new incident with title **"Malicious Inbox Rule, affected user AdeleV@contoso.OnMicrosoft.com"** notice that the name adapt and the effected user name added to the incident name.
 3. In the right pane we can review the incident preview, this view will gave us high level overview on the incident and the entity that related to it.
 
-4. Press on the **"view full details** 
+4. Press on the **"view full details"** 
 
 ![entity mapping](../Images/m3incident_pane.gif?raw=true)
 
