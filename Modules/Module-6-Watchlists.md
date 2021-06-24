@@ -3,7 +3,7 @@
 #### 🎓 Level: 300 (Intermediate)
 #### ⌛ Estimated time to complete this lab: 20 minutes
 
-This module will show you how to use Azure Sentinel watchlists to use in event correlation and enrichment. Once created, you can use watchlists in your search, detection rules, threat hunting, and response playbooks.
+This module will show you how to use Azure Sentinel watchlists in event correlation and enrichment. Once created, you can use watchlists in your search, detection rules, threat hunting, and response playbooks.
 
 #### Prerequisites
 This module assumes that you have completed [Module 1](Module-1-Setting-up-the-environment.md), as the data and the artifacts that we will be using in this module need to be deployed on your Azure Sentinel instance.
