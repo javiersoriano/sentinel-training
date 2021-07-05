@@ -15,12 +15,7 @@ As a SOC analyst the entry point to consume Security incidents(tickets) in Senti
 
 1. In the left navigation menu press on the incident and open the incident page. This page will show by default all the open incident in the last 24hr.
 
-<<<<<<< HEAD
 2. When we want to change the time window, present only incident from specific severity or to see also closed incident, we can use the filters bar:
-=======
-2. When we want to change the time window, present only incident from specific severity or to see also closed incident, we can use the filters bar.
-
->>>>>>> 3d6766347917b070930b55df91cb91c374c0be14
 
 ![Select Microsoft incident creation rule](../Images/m5-incident-filter.gif?raw=true)
 
