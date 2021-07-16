@@ -51,9 +51,9 @@ In this exercise, we will review this feature and create one example rule twith 
 
 ### Exercise 3: Review Fusion Rule (Advanced Multistage Attack Detection)
 
-Fusion rule is a unique kind of detection rule. With fusion rule Azure Sentinel can automatically detect multistage attacks by identifying combinations of anomalous behaviors and suspicious activities That are observed at various stages of the kill-chain.
+Fusion rule is a unique kind of detection rule. With Fusion rule, Azure Sentinel can automatically detect multistage attacks by identifying combinations of anomalous behaviors and suspicious activities That are observed at various stages of the kill-chain.
 
-In this exercise we will learn how to distinguish and review Azure Sentinel **fusion rule** in Azure Sentinel.
+In this exercise we will learn how to distinguish and review **Fusion rule** in Azure Sentinel.
 
 1. In the analytics page rule template tab, use the **Rule Type** filter and select **Fusion**
 
@@ -65,7 +65,7 @@ In this exercise we will learn how to distinguish and review Azure Sentinel **fu
 ![fusion description](../Images/m3-fusion02.gif?raw=true)
 
 
-As fusion rules produce security incidents with high fidelity and simulation can be challenging, we are adding an example for example incident that created from fusion detection.
+As Fusion rules produce security incidents with high fidelity and simulation can be challenging, we are adding an example of an incident that was created from fusion detection.
 
 In the above example we are seeing 2 low severity alerts from **Azure Active Directory Identity Protection** and **Microsoft Cloud App Security** that stich together into high severity incidence:
 
