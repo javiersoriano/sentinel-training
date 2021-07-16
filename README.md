@@ -33,6 +33,7 @@ To deploy Azure Sentinel Labs, **you must have a Microsoft Azure subscription**.
 - [Enable Microsoft incident creation rule](./Modules/Module-3-Analytics-Rules.md#exercise-2-enable-microsoft-incident-creation-rule)
 - [Review Fusion Rule (Advanced Multistage Attack Detection)](./Modules/Module-3-Analytics-Rules.md#exercise-3-review-fusion-rule-advanced-multistage-attack-detection)
 - [Create custom analytics rule](./Modules/Module-3-Analytics-Rules.md#exercise-4-create-azure-sentinel-custom-analytics-rule)
+- [Review resulting security incident](./Modules/Module-3-Analytics-Rules.md#exercise-5-review-resulting-security-incident)
 
 [**Module 4 – Incident Management**](./Modules/Module-4-Incident-Management.md)
 - [Review Azure Sentinel incident tools and capabilities](./Modules/Module-4-Incident-Management.md#exercise-1-review-azure-sentinel-incident-tools-and-capabilities)
