@@ -28,9 +28,9 @@ This module assumes that you have completed [Module 1](Module-1-Setting-up-the-e
 
 ### Exercise 2: Enable Microsoft incident creation rule
 
-Azure Sentinel is a cloud-native SIEM and one of the main use cases is to act as  single pane of glass, for alerts and event correlation. 
-For this purpose, and to be able to ingest and surafce Alewrts from Microsoft Security Product Alerts, we create t he we have the **Microsoft incident creation rule**
-In this exercise, we will review this feature and create one example rule twith a filtring option to help the analyst deal with alert fatigue.
+Azure Sentinel is a cloud-native SIEM and as such, it acts as single pane of glass for alerts and event correlation. 
+For this purpose, and to be able to ingest and surafce alerts from Microsoft Security Products, we create a **Microsoft incident creation rule**.
+In this exercise, we will review this feature and create one example rule with a filtering option to help the analyst deal with alert fatigue.
 
 1. In Azure Sentinel main page press on the **Analytics** section.
 2. In the top bar press on **+Create** and select **Microsoft incident creation rule**
@@ -67,11 +67,11 @@ In this exercise we will learn how to distinguish and review **Fusion rule** in 
 
 As Fusion rules produce security incidents with high fidelity and simulation can be challenging, we are adding an example of an incident that was created from fusion detection.
 
-In the above example we are seeing 2 low severity alerts from **Azure Active Directory Identity Protection** and **Microsoft Cloud App Security** that stich together into high severity incidence:
+In the below example we are seeing 2 low severity alerts from **Azure Active Directory Identity Protection** and **Microsoft Cloud App Security** that stich together into high severity incidence:
 
 ![fustion alert story](../Images/m3-fusion03.gif?raw=true)
 
-### Exercise 3: Create Azure sentinel custom analytics rule
+### Exercise 4: Create Azure sentinel custom analytics rule
 
 Your Security consult notify you about this thread https://www.reddit.com/r/sysadmin/comments/7kyp0a/recent_phishing_attempts_my_experience_and_what/
 Base on the attack vector and the organization risk he recommend you to create detection rule for this malicious activity.
@@ -83,7 +83,7 @@ In this exercise you will use Azure sentinel analytics rule wizard to create new
 
 **important note: in this lab we are using custom logs that replace the Out-off-the-box tables** 
 
-- Run the above search query to see the list of operation Azure sentinel cupture in the last 24hr 
+- Run the search query below to see the list of operation Azure sentinel cupture in the last 24hr 
 	
     ```powershell
 	OfficeActivity_CL
@@ -121,7 +121,7 @@ or SubjectOrBodyContainsWords has_any (Keywords)
   ```
 
 11. we can view the rule creation estimatin by pressing **Test with current data** in the right side and see the number of hits.
-12. Under the **Alert enrichment (Preview)**, expend the entity mapping section that will need to map our filed to well-known buckets
+12. Under the **Alert enrichment (Preview)**, expand the entity mapping section that will allow us to map our fields to well-known categories:
 	- In the **Entity type** open the supported list of entities and select **Account** in the identifier select **FullName** and map it to **UserId__s**
 	- Press **+ Add new entity** and this time select **Host** entity in the identifier select **FullName** and map it to **OriginatingServer_s**
 	- Press **+ Add new entity**, select **IP** entity, in the identifier select  **Address** and map it to **ClientIPAddress** value.
@@ -139,7 +139,7 @@ To make your SOC, more productive, save analyst time and affectively triage newl
 4. In the **Query scheduling** set the **run query every** to **5 minutes** and the **Lookup data to last 12 Hours** (This scheduling are not ideal for production environment and should be tune).
 5. In the **Suppression** leave it on **Off**
 6. Press the **Next:Incident settings(Preview)** 
-7. As your SOC is under stress, we want to reduce the number of alerts and be sure that when analyst handle a specific incident, he/she will see all related events or other incidents related to the same attack story. For that we will **implement Alert grouping** feature. to do so, follow the above steps: 
+7. As your SOC is under stress, we want to reduce the number of alerts and be sure that when analyst handle a specific incident, he/she will see all related events or other incidents related to the same attack story. For that we will **implement Alert grouping** feature. to do so, follow the steps below: 
 
 - In the **Incident settings (Preview)** under **Alert grouping** change it to **Enabled**.
 - Modify the **Limit the group to alerts created within the selected time frame** to **12 hours**.
