@@ -130,7 +130,7 @@ Your mapping should look like the above:
 	
 ![entity mapping](../Images/m3-entity01.gif?raw=true)
 
-To make your SOC, more productive, save analyst time and affectively triage newly created incidents, your SOC analyst ask you to add the effected user from the search results as part of the alert title.
+To make your SOC more productive, save analyst time and effectively triage newly created incidents, your SOC analyst ask you to add the affected user from the search results as part of the alert title.
 
 3. For applying this request, we will use the **Alert details** feature and create custom **Alert Name Format**
 
