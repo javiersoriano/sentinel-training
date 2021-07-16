@@ -148,7 +148,7 @@ To make your SOC more productive, save analyst time and effectively triage newly
 
 
  	
-### Exercise 4: Review the produce Security incident.
+### Exercise 5: Review the produce Security incident.
 	
 After we created the custom analytics rule that detect us for  malicious inbox rule rules.
 Let's review the incident that was created from this analytics rule.
