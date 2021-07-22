@@ -17,4 +17,15 @@ You can use one of many available integrated threat intelligence platform (TIP) 
 The ingested data store in a dedicated table name **ThreatIntelligenceIndicator** and visible on the Threat Intelligence page on the left navigation.
 
 ##Task 1: Review the TI data into Azure Sentinel Logs interface.
-1.	On the left navigation press **Logs**, this will redirect us to the Log analytics query interface. On the query interface we can see on the left side the tables with the relevant fields.
+1.On the left navigation press **Logs**, this will redirect us to the Log analytics query interface. On the query interface we can see on the left side the tables with the relevant fields.
+2. To be able to see the ThreatIntelligenceIndicator schema, run the above query 
+ ```powershell
+ ThreatIntelligenceIndicator
+| getschema
+   ```
+
+
+##Task 2:Review and manage TI IOC's in Azure Sentinel Threat intelligence manage page
+
+
+### Exercise 1: TI detection (blackbox + TI matching)
