@@ -34,21 +34,20 @@ This exercise shows you how to enable the Azure Activity data connector. This co
 
 ![azactivity3](../Images/azactivity33.png)
 
+
 On the Scope selection select your relevant subscription.
+
 **NOTE**:Please note that if you have owner permission on a management group level you can assign this policy\connector and define collection of the Azure Activity logs form all the subscriptions under the management group level.
+
 
 ![azactivity4](../Images/m2-activity-scope.png)
 
 5. Go to the Parameters tab and on the **Primary Log Analytics workspace** select the workspace of azure Sentinel
 
-
 ![azactivity8](../Images/m2-ws-target-foractivitylogs.png)
 
 
-
 5. Press **Review and Create** to save this policy and **Create**.
-
-
 
 6. Click on *Next Steps*. Here you see what content is available for the telemetry that is brought into Sentinel by this connector, like Workbooks, Query samples and Analytics Rules.
 
