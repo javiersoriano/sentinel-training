@@ -35,6 +35,7 @@ ThreatIntelligenceIndicator
 | take 10
    ```
 To understand if specific IOC is active, we need to have closer look on the above columns
+
 ExpirationDateTime [UTC]
 Acitve 
 
