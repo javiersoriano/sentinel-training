@@ -16,7 +16,7 @@ As we reviewed in previous model, we have several ways to ingest TI data into Az
 You can use one of many available integrated threat intelligence platform (TIP) products, you can connect to TAXII servers to take advantage of any STIX-compatible threat intelligence source, and you can also make use of any custom solutions that can communicate directly with the Microsoft Graph Security tiIndicators API.
 The ingested data store in a dedicated table name **ThreatIntelligenceIndicator** and visible on the Threat Intelligence page on the left navigation.
 
-##Task 1: Review the TI data into Azure Sentinel Logs interface.
+### Task 1: Review the TI data into Azure Sentinel Logs interface.
 1.On the left navigation press **Logs**, this will redirect us to the Log analytics query interface. On the query interface we can see on the left side the tables with the relevant fields.
 2. To be able to see the ThreatIntelligenceIndicator schema, run the above query: 
  ```powershell
@@ -46,8 +46,9 @@ This mean that our matching detection rule will take this IOC in consideration w
 ![Acitve](../Images/TI-active.png)
 
 
-##Task 2:Review and manage TI IOC's in Azure Sentinel Threat intelligence manage page
+### Task 2:Review and manage TI IOC's in Azure Sentinel Threat intelligence manage page
 
+ש
 
 ### Exercise 1: TI detection (blackbox + TI matching)
 
