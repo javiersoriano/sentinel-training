@@ -44,7 +44,7 @@ On the Scope selection select your relevant subscription.
 
 5. Go to the Parameters tab and on the **Primary Log Analytics workspace** select the workspace of azure Sentinel
 
-![azactivity8](../Images/m2-ws-target-foractivitylogs.png)
+![azactivity8](../Images/m2-ws-target-foractivitylogs1.png)
 
 
 5. Press **Review and Create** to save this policy and **Create**.
