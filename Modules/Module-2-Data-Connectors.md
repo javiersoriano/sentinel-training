@@ -91,7 +91,7 @@ This exercise shows you how to enable the Threat Intelligence - TAXII data conne
     - **Import Indicators**: At most one month old (review all available options)
     - **Polling frequency**: Once an minute (review all available options)
 
-![taxii1](../Images/taxii1.png)
+![taxii1](../Images/taxii11.png)
 
 4. Click *Add* and wait until the operation completes.
 
