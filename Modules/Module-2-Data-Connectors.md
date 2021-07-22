@@ -32,7 +32,7 @@ This exercise shows you how to enable the Azure Activity data connector. This co
 
 4. Click on the **Launch Azure Policy Assignment wizard** this will redirect you to the policy creation page.
 
-![azactivity3](../Images/azactivity3.png)
+![azactivity3](../Images/azactivity33.png)
 
 On the Scope selection select your relevant subscription.
 **NOTE**:Please note that if you have owner permission on a management group level you can assign this policy\connector and define collection of the Azure Activity logs form all the subscriptions under the management group level.
