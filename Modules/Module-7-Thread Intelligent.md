@@ -26,6 +26,29 @@ The ingested data store in a dedicated table name **ThreatIntelligenceIndicator*
 
 ![schema](../Images/TI-schema.png)
 
+3.	lets explore the TI table by running the above queries:
+
+Every time we are dealing with new data source, we want to take sample data and expand one of the results
+
+ ```powershell
+ThreatIntelligenceIndicator
+| take 10
+   ```
+To understand if specific IOC is active, we need to have closer look on the above columns
+ExpirationDateTime [UTC]
+Acitve 
+
+On our example, we can see that the IOC is an IP that is active with future Expiration date
+This mean that our matching detection rule will take this IOC in consideration when we will do the correlation with your data sources. 
+
+![Acitve](../Images/TI-active.png)
+
+
+##Task 2:Review and manage TI IOC's in Azure Sentinel Threat intelligence manage page
+
+
+### Exercise 1: TI detection (blackbox + TI matching)
+
 
 ##Task 2:Review and manage TI IOC's in Azure Sentinel Threat intelligence manage page
 
