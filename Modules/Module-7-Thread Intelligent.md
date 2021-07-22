@@ -37,6 +37,7 @@ ThreatIntelligenceIndicator
 To understand if specific IOC is active, we need to have closer look on the above columns
 
 ExpirationDateTime [UTC]
+
 Acitve 
 
 On our example, we can see that the IOC is an IP that is active with future Expiration date
