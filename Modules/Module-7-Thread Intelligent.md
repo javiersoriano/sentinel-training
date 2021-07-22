@@ -18,7 +18,7 @@ The ingested data store in a dedicated table name **ThreatIntelligenceIndicator*
 
 ### Task 1: Review the TI data into Azure Sentinel Logs interface.
 1.On the left navigation press **Logs**, this will redirect us to the Log analytics query interface. On the query interface we can see on the left side the tables with the relevant fields.
-2. To be able to see the ThreatIntelligenceIndicator schema, run the above query: 
+2. Azure Sentinel Build-in tables are strongly type schema, To be able to see the ThreatIntelligenceIndicator schema, run the above query: 
  ```powershell
  ThreatIntelligenceIndicator
 | getschema
@@ -26,9 +26,9 @@ The ingested data store in a dedicated table name **ThreatIntelligenceIndicator*
 
 ![schema](../Images/TI-schema.png)
 
-3.	lets explore the TI table by running the above queries:
+3.	First let's explore and delve into the TI table, we will do that by running the above query:
 
-Every time we are dealing with new data source, we want to take sample data and expand one of the results
+we want to take sample data and expand one of the results
 
  ```powershell
 ThreatIntelligenceIndicator
