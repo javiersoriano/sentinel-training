@@ -1,4 +1,4 @@
-# Module 6 - Thread Intelligent Thread Intelligent 
+# Module 7 - Thread Intelligent Thread Intelligent 
 
 #### 🎓 Level: 300 (Intermediate)
 #### ⌛ Estimated time to complete this lab: 20 minutes
@@ -24,7 +24,7 @@ The ingested data store in a dedicated table name **ThreatIntelligenceIndicator*
 | getschema
    ```
 
-![entity mapping](../Images/TI-schema.png)
+![schema](../Images/TI-schema.png)
 
 
 ##Task 2:Review and manage TI IOC's in Azure Sentinel Threat intelligence manage page
