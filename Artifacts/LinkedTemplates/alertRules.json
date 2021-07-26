@@ -128,9 +128,6 @@
             "apiVersion": "2021-03-01-preview",
             "kind": "Scheduled",
             "location": "[resourceGroup().location]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Resources/deploymentScripts', 'sleep1')]"
-            ],
             "properties": {
                 "displayName": "Sign-ins from IPs that attempt sign-ins to disabled accounts",
                 "description": "Identifies IPs with failed attempts to sign in to one or more disabled accounts signed in successfully to another account.\nReferences: https://docs.microsoft.com/azure/active-directory/reports-monitoring/reference-sign-ins-error-codes\n50057 - User account is disabled. The account has been disabled by an administrator.",
@@ -181,34 +178,11 @@
             }
         },
         {
-            "dependsOn": [
-                "[resourceId('Microsoft.OperationalInsights/workspaces/providers/alertRules', parameters('workspaceName'), 'Microsoft.SecurityInsights', parameters('disabledRuleGuid'))]"
-            ],
-            "type": "Microsoft.Resources/deploymentScripts",
-            "apiVersion": "2020-10-01",
-            "name": "sleep2",
-            "location": "[resourceGroup().location]",
-            "kind": "AzurePowerShell",
-            "properties": {
-                "forceUpdateTag": "1",
-                "azPowerShellVersion": "3.0",
-                "arguments": "",
-                "scriptContent": "Start-Sleep -Seconds 1",
-                "supportingScriptUris": [],
-                "timeout": "PT5M",
-                "cleanupPreference": "Always",
-                "retentionInterval": "P1D"
-            }
-        },
-        {
             "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules",
             "name": "[concat(parameters('workspaceName'),'/Microsoft.SecurityInsights/',parameters('mlRuleGuid'))]",
             "apiVersion": "2021-03-01-preview",
             "kind": "Scheduled",
             "location": "[resourceGroup().location]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Resources/deploymentScripts', 'sleep2')]"
-            ],
             "properties": {
                 "displayName": "Malicious Inbox Rule - custom",
                 "description": "This rule is detecting on delete all traces of phishing email from user mailboxes",
