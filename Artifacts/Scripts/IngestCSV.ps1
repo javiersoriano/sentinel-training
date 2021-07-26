@@ -180,4 +180,8 @@ $status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/senti
 
 Write-Host $status
 
+$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/model_evasion_detection_CL_alerts.csv" -EventsTable "Cisco_Umbrella_dns"
+
+Write-Host $status
+
 Start-Sleep -Seconds 540
