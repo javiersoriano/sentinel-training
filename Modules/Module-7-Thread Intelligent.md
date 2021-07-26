@@ -1,4 +1,4 @@
-# Module 7 - Thread Intelligent Thread Intelligent 
+# Module 7 - Threat Intelligence
 
 #### 🎓 Level: 300 (Intermediate)
 #### ⌛ Estimated time to complete this lab: 20 minutes
