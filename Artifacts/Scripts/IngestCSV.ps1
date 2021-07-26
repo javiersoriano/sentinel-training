@@ -148,9 +148,9 @@ Function SendToLogA ($url, $eventsTable) {
 }
 
 # Submit the data to the API endpoint
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/solarigate_CEFevent.csv" -EventsTable "CommonSecurityLog"
+#$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/solarigate_CEFevent.csv" -EventsTable "CommonSecurityLog"
 
-Write-Host $status
+#Write-Host $status
 
 $status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/securityEvents.csv" -EventsTable "SecurityEvent"
 
@@ -177,6 +177,10 @@ $status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/senti
 Write-Host $status
 
 $status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/model_evasion_detection_CL_alerts.csv" -EventsTable "OfficeActivity"
+
+Write-Host $status
+
+$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/solarigate-beacon-umbrella.csv" -EventsTable "Cisco_Umbrella_dns"
 
 Write-Host $status
 

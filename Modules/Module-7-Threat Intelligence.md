@@ -1,4 +1,4 @@
-# Module 7 - Thread Intelligent Thread Intelligent 
+# Module 7 - Threat Intelligence
 
 #### 🎓 Level: 300 (Intermediate)
 #### ⌛ Estimated time to complete this lab: 20 minutes
@@ -10,8 +10,28 @@ During this model we will use the TI data we ingested on a previews model of thi
 #### Prerequisites
 This module assumes that you have completed [Module 1](Module-1-Setting-up-the-environment.md), and also [Module 2]( Module-2-Data-Connectors.md) that enable the TAXII TI connector.
  
+ 
 
-### Exercise 1: Review Thread Intelligence data and the Threat intelligence manage page
+### Exercise 1: Review our Threat Intelligence data connectors that brings TI IOS's into Azure Sentinel tables.
+
+Our first connector that is currently in public preview is based on a  threat intelligence platform (TIP) solutions.
+You can read on the Prerequisites and Instructions on our official docs Connect your threat intelligence platform to Azure Sentinel | Microsoft Docs
+
+### task 1 : Review the Threat Intelligence TIP connector 
+
+	1. On the left navigation open the connector page and search **hreat Intelligence Platforms (Preview)**
+	2. On the bottom right pane press **open connector page**
+	3. Review the connector Prerequisites and notify that for enabling this connector the user need to be **global admin** or **security administrator**
+	4. Read the configuration section and notice that as part of this connector onboarding the user need to create an AAD app and give it the above permission
+	
+### task 2 : Threat intelligence - TAXII (Preview)
+
+Our second type of TI connector is based on TAXII, you can read more about the Prerequisites and Instructions on our official docs Connect Azure Sentinel to STIX/TAXII threat intelligence feeds | Microsoft Docs
+
+In  [Module 2]( Module-2-Data-Connectors.md) we already enable the TAXII connector in our lab environment, please refer to this model for more information.
+
+
+### Exercise 2: Review Thread Intelligence data and the Threat intelligence manage page
 As we reviewed in previous model, we have several ways to ingest TI data into Azure sentinel.
 You can use one of many available integrated threat intelligence platform (TIP) products, you can connect to TAXII servers to take advantage of any STIX-compatible threat intelligence source, and you can also make use of any custom solutions that can communicate directly with the Microsoft Graph Security tiIndicators API.
 The ingested data store in a dedicated table name **ThreatIntelligenceIndicator** and visible on the Threat Intelligence page on the left navigation.
