@@ -17,14 +17,14 @@ This module assumes that you have completed [Module 1](Module-1-Setting-up-the-e
 Our first connector that is currently in public preview is based on a  threat intelligence platform (TIP) solutions.
 You can read on the Prerequisites and Instructions on our official docs Connect your threat intelligence platform to Azure Sentinel | Microsoft Docs
 
-### task 1 : Review the Threat Intelligence TIP connector 
+### Task 1 : Review the **Threat Intelligence TIP** connector 
 
 	1. On the left navigation open the connector page and search **hreat Intelligence Platforms (Preview)**
 	2. On the bottom right pane press **open connector page**
 	3. Review the connector Prerequisites and notify that for enabling this connector the user need to be **global admin** or **security administrator**
 	4. Read the configuration section and notice that as part of this connector onboarding the user need to create an AAD app and give it the above permission
 	
-### task 2 : Threat intelligence - TAXII (Preview)
+### Task 2 : Review the **Threat intelligence - TAXII** connector
 
 Our second type of TI connector is based on TAXII, you can read more about the Prerequisites and Instructions on our official docs Connect Azure Sentinel to STIX/TAXII threat intelligence feeds | Microsoft Docs
 
@@ -56,9 +56,8 @@ ThreatIntelligenceIndicator
    ```
 To understand if specific IOC is active, we need to have closer look on the above columns
 
-ExpirationDateTime [UTC]
-
-Acitve 
+- ExpirationDateTime [UTC]
+- Acitve 
 
 On our example, we can see that the IOC is an IP that is active with future Expiration date
 This mean that our matching detection rule will take this IOC in consideration when we will do the correlation with your data sources. 
