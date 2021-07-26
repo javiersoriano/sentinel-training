@@ -54,7 +54,25 @@
                 "sku": {
                     "name": "[parameters('pricingTier')]"
                 }
-            }
+            },
+            "resources": [
+                {
+                "type": "savedSearches",
+                "apiVersion": "2020-08-01",
+                "name": "imDns",
+                    "dependsOn": [
+                    "[concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'))]"
+                    ],
+                    "properties": {
+                    "etag": "*",
+                    "displayName": " ASIM DNS source agnostic parser",
+                    "category": "Security",
+                    "FunctionAlias": "imDns",
+                    "query": "union isfuzzy=true vimDnsEmpty, vimDnsCiscoUmbrella , vimDnsInfobloxNIOS , vimDnsMicrosoftOMS",
+                    "version": 1
+                }
+                }
+            ]
         },
         {
             "name": "[concat('SecurityInsights','(', parameters('workspaceName'),')')]",
