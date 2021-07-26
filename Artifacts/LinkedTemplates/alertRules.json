@@ -42,8 +42,8 @@
         {
             "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules",
             "name": "[concat(parameters('workspaceName'),'/Microsoft.SecurityInsights/',parameters('solarigateRuleGuid'))]",
-            "apiVersion": "2021-03-01-preview",
             "kind": "Scheduled",
+            "apiVersion":"2021-03-01-preview",
             "location": "[resourceGroup().location]",
             "dependsOn": [
                 "[resourceId('Microsoft.OperationalInsights/workspaces/providers/alertRules', parameters('workspaceName'), 'Microsoft.SecurityInsights', parameters('fusionRuleGuid'))]"
@@ -53,9 +53,9 @@
                 "description": "Identifies a match across various data feeds for domains IOCs related to the Solorigate incident.\n References: https://blogs.microsoft.com/on-the-issues/2020/12/13/customers-protect-nation-state-cyberattacks/, \n https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html?1",
                 "severity": "High",
                 "enabled": true,
-                "query": "let domains = dynamic([\"incomeupdate.com\",\"zupertech.com\",\"databasegalore.com\",\"panhardware.com\",\"avsvmcloud.com\",\"digitalcollege.org\",\"freescanonline.com\",\"deftsecurity.com\",\"thedoccloud.com\",\"virtualdataserver.com\",\"lcomputers.com\",\"webcodez.com\",\"globalnetworkissues.com\",\"kubecloud.com\",\"seobundlekit.com\",\"solartrackingsystem.net\",\"virtualwebdata.com\"]);\n(union isfuzzy=true\n(CommonSecurityLog_CL \n  | parse Message with * '(' DNSName_s ')' * \n  | where DNSName_s in~ (domains) or DestinationHostName_s has_any (domains) or RequestURL_s has_any(domains)\n  | extend AccountCustomEntity = SourceUserID_s, HostCustomEntity = DeviceName_s, IPCustomEntity = SourceIP\n  ),\n(DnsEvents \n  | extend DNSName = Name\n  | where isnotempty(DNSName)\n  | where DNSName in~ (domains)\n  | extend IPCustomEntity = ClientIP\n  ),\n(VMConnection \n  | parse RemoteDnsCanonicalNames with * '[\"' DNSName '\"]' *\n  | where isnotempty(DNSName)\n  | where DNSName in~ (domains)\n  | extend IPCustomEntity = RemoteIp\n  ),\n(DeviceNetworkEvents \n  | where isnotempty(RemoteUrl) \n  | where RemoteUrl  has_any (domains)  \n  | extend DNSName = RemoteUrl\n  | extend IPCustomEntity = RemoteIP \n  | extend HostCustomEntity = DeviceName \n  ),\n(AzureDiagnostics\n  | where ResourceType == \"AZUREFIREWALLS\"\n  | where Category == \"AzureFirewallDnsProxy\"\n  | parse msg_s with \"DNS Request: \" ClientIP \":\" ClientPort \" - \" QueryID \" \" Request_Type \" \" Request_Class \" \" Request_Name \". \" Request_Protocol \" \" Request_Size \" \" EDNSO_DO \" \" EDNS0_Buffersize \" \" Responce_Code \" \" Responce_Flags \" \" Responce_Size \" \" Response_Duration\n  | where Request_Name has_any (domains)  \n  | extend DNSName = Request_Name\n  | extend IPCustomEntity = ClientIP \n  ),\n(AzureDiagnostics \n  | where ResourceType == \"AZUREFIREWALLS\"\n  | where Category == \"AzureFirewallApplicationRule\"\n  | parse msg_s with Protocol 'request from ' SourceHost ':' SourcePort 'to ' DestinationHost ':' DestinationPort '. Action:' Action\n  | where isnotempty(DestinationHost)\n  | where DestinationHost has_any (domains)  \n  | extend DNSName = DestinationHost \n  | extend IPCustomEntity = SourceHost\n  ) \n  )",
-                "queryFrequency": "PT5M",
-                "queryPeriod": "PT30M",
+                "query": "let domains = dynamic([\"incomeupdate.com\",\"zupertech.com\",\"databasegalore.com\",\"panhardware.com\",\"avsvmcloud.com\",\"digitalcollege.org\",\"freescanonline.com\",\"deftsecurity.com\",\"thedoccloud.com\",\"virtualdataserver.com\",\"lcomputers.com\",\"webcodez.com\",\"globalnetworkissues.com\",\"kubecloud.com\",\"seobundlekit.com\",\"solartrackingsystem.net\",\"virtualwebdata.com\"]);\n(union isfuzzy=true\n(CommonSecurityLog \n  | parse Message with * '(' DNSName ')' * \n  | where DNSName in~ (domains) or DestinationHostName has_any (domains) or RequestURL has_any(domains)\n  | extend AccountCustomEntity = SourceUserID, HostCustomEntity = DeviceName, IPCustomEntity = SourceIP\n  ),\n(DnsEvents \n  | extend DNSName = Name\n  | where isnotempty(DNSName)\n  | where DNSName in~ (domains)\n  | extend IPCustomEntity = ClientIP\n  ),\n(imDns \n  | where isnotempty(Query)\n  | where Query in~ (domains)\n  | extend DNSName = Query\n  | extend IPCustomEntity = SrcIpAddr\n  ),\n(VMConnection \n  | parse RemoteDnsCanonicalNames with * '[\"' DNSName '\"]' *\n  | where isnotempty(DNSName)\n  | where DNSName in~ (domains)\n  | extend IPCustomEntity = RemoteIp\n  ),\n(DeviceNetworkEvents \n  | where isnotempty(RemoteUrl) \n  | where RemoteUrl  has_any (domains)  \n  | extend DNSName = RemoteUrl\n  | extend IPCustomEntity = RemoteIP \n  | extend HostCustomEntity = DeviceName \n  ),\n(AzureDiagnostics\n  | where ResourceType == \"AZUREFIREWALLS\"\n  | where Category == \"AzureFirewallDnsProxy\"\n  | parse msg_s with \"DNS Request: \" ClientIP \":\" ClientPort \" - \" QueryID \" \" Request_Type \" \" Request_Class \" \" Request_Name \". \" Request_Protocol \" \" Request_Size \" \" EDNSO_DO \" \" EDNS0_Buffersize \" \" Responce_Code \" \" Responce_Flags \" \" Responce_Size \" \" Response_Duration\n  | where Request_Name has_any (domains)  \n  | extend DNSName = Request_Name\n  | extend IPCustomEntity = ClientIP \n  ),\n(AzureDiagnostics \n  | where ResourceType == \"AZUREFIREWALLS\"\n  | where Category == \"AzureFirewallApplicationRule\"\n  | parse msg_s with Protocol 'request from ' SourceHost ':' SourcePort 'to ' DestinationHost ':' DestinationPort '. Action:' Action\n  | where isnotempty(DestinationHost)\n  | where DestinationHost has_any (domains)  \n  | extend DNSName = DestinationHost \n  | extend IPCustomEntity = SourceHost\n  ) \n  )",
+                "queryFrequency": "PT6H",
+                "queryPeriod": "PT6H",
                 "triggerOperator": "GreaterThan",
                 "triggerThreshold": 0,
                 "suppressionDuration": "PT5H",
@@ -96,7 +96,7 @@
                         "fieldMappings": [
                             {
                                 "identifier": "FullName",
-                                "columnName": "DeviceName_s"
+                                "columnName": "HostCustomEntity"
                             }
                         ]
                     },
@@ -118,27 +118,8 @@
                             }
                         ]
                     }
-                ]
-            }
-        },
-        {
-            "dependsOn": [
-                "[resourceId('Microsoft.OperationalInsights/workspaces/providers/alertRules', parameters('workspaceName'), 'Microsoft.SecurityInsights', parameters('solarigateRuleGuid'))]"
-            ],
-            "type": "Microsoft.Resources/deploymentScripts",
-            "apiVersion": "2020-10-01",
-            "name": "sleep1",
-            "location": "[resourceGroup().location]",
-            "kind": "AzurePowerShell",
-            "properties": {
-                "forceUpdateTag": "1",
-                "azPowerShellVersion": "3.0",
-                "arguments": "",
-                "scriptContent": "Start-Sleep -Seconds 1",
-                "supportingScriptUris": [],
-                "timeout": "PT5M",
-                "cleanupPreference": "Always",
-                "retentionInterval": "P1D"
+                ],
+                "templateVersion": "1.0.0"
             }
         },
         {
@@ -147,9 +128,6 @@
             "apiVersion": "2021-03-01-preview",
             "kind": "Scheduled",
             "location": "[resourceGroup().location]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Resources/deploymentScripts', 'sleep1')]"
-            ],
             "properties": {
                 "displayName": "Sign-ins from IPs that attempt sign-ins to disabled accounts",
                 "description": "Identifies IPs with failed attempts to sign in to one or more disabled accounts signed in successfully to another account.\nReferences: https://docs.microsoft.com/azure/active-directory/reports-monitoring/reference-sign-ins-error-codes\n50057 - User account is disabled. The account has been disabled by an administrator.",
@@ -200,34 +178,11 @@
             }
         },
         {
-            "dependsOn": [
-                "[resourceId('Microsoft.OperationalInsights/workspaces/providers/alertRules', parameters('workspaceName'), 'Microsoft.SecurityInsights', parameters('disabledRuleGuid'))]"
-            ],
-            "type": "Microsoft.Resources/deploymentScripts",
-            "apiVersion": "2020-10-01",
-            "name": "sleep2",
-            "location": "[resourceGroup().location]",
-            "kind": "AzurePowerShell",
-            "properties": {
-                "forceUpdateTag": "1",
-                "azPowerShellVersion": "3.0",
-                "arguments": "",
-                "scriptContent": "Start-Sleep -Seconds 1",
-                "supportingScriptUris": [],
-                "timeout": "PT5M",
-                "cleanupPreference": "Always",
-                "retentionInterval": "P1D"
-            }
-        },
-        {
             "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules",
             "name": "[concat(parameters('workspaceName'),'/Microsoft.SecurityInsights/',parameters('mlRuleGuid'))]",
             "apiVersion": "2021-03-01-preview",
             "kind": "Scheduled",
             "location": "[resourceGroup().location]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Resources/deploymentScripts', 'sleep2')]"
-            ],
             "properties": {
                 "displayName": "Malicious Inbox Rule - custom",
                 "description": "This rule is detecting on delete all traces of phishing email from user mailboxes",
