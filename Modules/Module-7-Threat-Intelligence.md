@@ -17,18 +17,26 @@ For detailed prerequisites and instructions for this connector, you can visit ou
 
 #### Task 1 : Threat Intelligence Platforms (TIP) connector 
 
+<<<<<<< HEAD
 This connector is currently in public preview and is based on Third-party Threat Intelligence platform (TIP) solutions like PaloAlto MineMeld, ThreatConnect and others.
+=======
+**Task 1:**  Review the **Threat Intelligence TIP** connector 
+>>>>>>> 02ae06ad2dcbcc8ad0f0363f36bba265bc352c77
 
 1. On the left navigation open the connector page and search **Threat Intelligence Platforms (Preview)**
 2. On the bottom right pane press **Open connector page**
 3. Review the connector Prerequisites and notice that to enable this connector, the user need to be **Global Admin** or **Security Administrator** in the current Azure AD tenant
 4. Read the configuration section and notice that as part of this connector onboarding, the user needs to create an Azure AD app registration and grant one of the permissions above
 	
+<<<<<<< HEAD
 #### Task 2 : Threat intelligence TAXII connector
 
 For detailed prerequisites and instructions for this connector, you can visit our official doc on this matter [Connect Azure Sentinel to STIX/TAXII threat intelligence feeds](https://docs.microsoft.com/en-us/azure/sentinel/connect-threat-intelligence-taxii)
 
 In [Module 2](Module-2-Data-Connectors.md) we already enabled the TAXII connector in our lab environment, please refer to this module for more information.
+=======
+**Task 2:** Review the **Threat intelligence - TAXII** connector
+>>>>>>> 02ae06ad2dcbcc8ad0f0363f36bba265bc352c77
 
 
 ### Exercise 2: Explore the Threat Intelligence menu
@@ -69,7 +77,6 @@ On our example, we can see that the IOC is an IP that is active with future Expi
 
 #### Task 2: Review and manage TI IOC's in Azure Sentinel Threat intelligence menu
 
-ש
 
 ### Exercise 3: Analytics Rules based on Threat Intelligence data
 
