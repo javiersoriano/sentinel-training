@@ -126,12 +126,9 @@ ThreatIntelligenceIndicator
 10. Once the **Choose columns** opened in the right side, select the **Description**  and drag and drop it by pressing on the 3 dots.
 11. Press **Apply**
 
-![Acitve](../Images/m7-TIlogs.png)
-
-
 After couple of days we got a new information from our internal TI team that this new IOC is not relevant anymore and we need to delete it.
 
-11. Select the newly created manual IOC and press delete
+12. Select the newly created manual IOC and press delete
 
 ![Acitve](../Images/m7-deleteTI.png)
 
