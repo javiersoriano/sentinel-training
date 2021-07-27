@@ -53,9 +53,9 @@ To deploy Azure Sentinel Labs, **you must have a Microsoft Azure subscription**.
 - [Threat Intelligence data connectors](./Modules/Module-7-Threat-Intelligence.md#exercise-1-threat-intelligence-data-connectors)
 - [Explore the Threat Intelligence menu](./Modules/Module-7-Threat-Intelligence.md#exercise-2-explore-the-threat-intelligence-menu)
 - [Analytics Rules based on Threat Intelligence data](./Modules/Module-7-Threat-Intelligence.md#exercise-3-analytics-rules-based-on-threat-intelligence-data)
-- [Threat Intelligence Workbook](./Modules/Module-7-Threat-Intelligence.md#exercise-5-ti-workbook)
+- [Threat Intelligence Workbook](./Modules/Module-7-Threat-Intelligence.md#exercise-5-threat-intelligence-workbook)
 
 [**Module 8 - Azure Sentinel Solutions**](./Modules/Module-8-Azure-Sentinel-Solutions.md)
-- [Explore Azure Sentinel Solutions gallery](./Modules/Module-8-Azure-Sentinel-Solutions.md)
-- [Deploy a new solution](./Modules/Module-8-Azure-Sentinel-Solutions.md)
-- [Review and enable deployed artifacts](./Modules/Module-8-Azure-Sentinel-Solutions.md)
+- [Explore Azure Sentinel Solutions gallery](./Modules/Module-8-Azure-Sentinel-Solutions.md#exercise-1-explore-azure-sentinel-solutions-gallery)
+- [Deploy a new solution](./Modules/Module-8-Azure-Sentinel-Solutions.md#exercise-2-deploy-a-new-solution)
+- [Review and enable deployed artifacts](./Modules/Module-8-Azure-Sentinel-Solutions.md#exercise-3-review-and-enable-deployed-artifacts)
