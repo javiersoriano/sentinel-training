@@ -58,9 +58,8 @@ ThreatIntelligenceIndicator
 
 To understand if a specific IOC is active, we need to have closer look at the following columns>
 
-**ExpirationDateTime [UTC]**
-
-**Acitve** 
+- **ExpirationDateTime [UTC]**
+- **Acitve** 
 
 On our example, we can see that the IOC is an IP that is active with future Expiration date. This means that our matching detection rule will take this IOC into consideration when correlating with data sources. 
 
@@ -71,9 +70,11 @@ On our example, we can see that the IOC is an IP that is active with future Expi
 
 After we ingested our TI data into the ThreatIntelligenceIndicator table,
 our mession is to review how our SOC can leverage and manage the TI menu to allow us to search, tag and manage the life cycle of IOC.
+
  
 1. On the Azure sentinel left menu press on the Threat intelligence (Preview)
-This menu id a visual representation of the ThreatIntelligenceIndicator  table.
+This menu id a visual representation of the ThreatIntelligenceIndicator table.
+
 ![Acitve](../Images/m7-Tiblade.png)
 
 
@@ -81,7 +82,7 @@ This menu id a visual representation of the ThreatIntelligenceIndicator  table.
 
 ![Acitve](../Images/m7-Tiblade1.png)
 	
-3. On the top area on the main blade, we can filter the list of the IOC's based on a specific parameters.
+3. On the top area of the main blade, we can filter the list of the IOC's based on a specific parameters.
 In our case we only ingested one type of IOC (IP), but the **Type** filter allow us to filter based on diffrent types.
 If we ingested IOC's from multiple TI data source, the **source** filter can allow us to slice it.
 
@@ -97,21 +98,20 @@ This allows other data sources and detection's to correlate and detect interacti
 1. On the **Threat intelligence (Preview)** top menu, press on **add new**, this will open the **new Indicator** menu
 2. In the drop down select url and add the above url http://phishing.com
 3. Add Tags that will help us to add metadata on this IOC, on our example we want to tag this file IOC with Our relevant incident id that this IOC was part of its observation.
-On the add tag pop-up write **incident 4326** and press Ok.
+On the add tag pop-up write **incident 4326** and **press Ok**.
 	 
 ![Acitve](../Images/m7-tibladeaddtag.png)
 
 4. On the **Thread types** select **malicious activity**
 	
-5. Add an description and set the confidence level to 80, set up the **Valid from** date to today and the **Valid until** to two week from now.
+5. Add an **description** and set the **confidence level** to 80, set up the **Valid from** date to today and the **Valid until** to two week from now.
 6. Press **Apply**
 
 ![Acitve](../Images/m7-fullnewIOC.png)
 
 
-
-7. Notice to the new IOC on the TI menu.
-8. Every new IOC we added in the TI menu added automatically to the ThreatIntelligenceIndicator table,
+7. Notice to the newly created IOC on the TI menu.
+8. please be aware that every new IOC we added in the TI menu added automatically to the ThreatIntelligenceIndicator table,
 You can validate it by opening the **Logs** menu and run the above query.
 
 ```powershell
@@ -119,7 +119,7 @@ ThreatIntelligenceIndicator
 | search "http://phishing.com"
 ```
 
-	9. As we want to view the description column, we need to modify the column order for the menu by select the **column** button on the top bar 
+9. As we want to view the description column, we need to modify the column order for the menu by select the **column** button on the top bar 
 ![Acitve](../Images/m7-tibladecolumnorder.png)
 
 
