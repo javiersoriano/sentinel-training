@@ -48,3 +48,14 @@ To deploy Azure Sentinel Labs, **you must have a Microsoft Azure subscription**.
 [**Module 6 – Watchlists**](./Modules/Module-6-Watchlists.md)
 - [Create a Watchlist](./Modules/Module-6-Watchlists.md#exercise-1-create-a-watchlist)
 - [Whitelist IP addresses in the analytics rule](./Modules/Module-6-Watchlists.md#exercise-2-whitelist-ip-addresses-in-the-analytics-rule)
+
+[**Module 7 - Threat Intelligence**](./Modules/Module-7-Threat-Intelligence.md)
+- [Threat Intelligence data connectors](./Modules/Module-7-Threat-Intelligence.md#exercise-1-threat-intelligence-data-connectors)
+- [Explore the Threat Intelligence menu](./Modules/Module-7-Threat-Intelligence.md#exercise-2-explore-the-threat-intelligence-menu)
+- [Analytics Rules based on Threat Intelligence data](./Modules/Module-7-Threat-Intelligence.md#exercise-3-analytics-rules-based-on-threat-intelligence-data)
+- [Threat Intelligence Workbook](./Modules/Module-7-Threat-Intelligence.md#exercise-5-ti-workbook)
+
+[**Module 8 - Azure Sentinel Solutions**](./Modules/Module-8-Azure-Sentinel-Solutions.md)
+- [Explore Azure Sentinel Solutions gallery](./Modules/Module-8-Azure-Sentinel-Solutions.md)
+- [Deploy a new solution](./Modules/Module-8-Azure-Sentinel-Solutions.md)
+- [Review and enable deployed artifacts](./Modules/Module-8-Azure-Sentinel-Solutions.md)
