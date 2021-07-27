@@ -67,7 +67,69 @@ On our example, we can see that the IOC is an IP that is active with future Expi
 ![Acitve](../Images/TI-active.png)
 
 
-#### Task 2: Review and manage TI IOC's in Azure Sentinel Threat intelligence menu
+#### Task 2: Review and manage TI IOC's in Azure Sentinel Threat intelligence menu.
+
+After we ingested our TI data into the ThreatIntelligenceIndicator table,
+our mession is to review how our SOC can leverage and manage the TI menu to allow us to search, tag and manage the life cycle of IOC.
+ 
+1. On the Azure sentinel left menu press on the Threat intelligence (Preview)
+This menu id a visual representation of the ThreatIntelligenceIndicator  table.
+![Acitve](../Images/m7-Tiblade.png)
+
+
+2. Select one IOC from the main pane and notice that the right  pane changed accordingly and present the metadata of the selected IOC.
+
+![Acitve](../Images/m7-Tiblade1.png)
+	
+3. On the top area on the main blade, we can filter the list of the IOC's based on a specific parameters.
+In our case we only ingested one type of IOC (IP), but the **Type** filter allow us to filter based on diffrent types.
+If we ingested IOC's from multiple TI data source, the **source** filter can allow us to slice it.
+
+![Acitve](../Images/m7-ITbladeFilter)
+
+	
+#### Task 3: add new TI IOC manually in Azure Sentinel Threat intelligence menu
+	
+	
+Part of the SOC analytics job is from time to time to add an IOC in a Manuel way to our TI index,
+This allows other data sources and detection's to correlate and detect interaction with this IOC.
+
+	1. On the **Threat intelligence (Preview)** top menu, press on **add new**, this will open the **new Indicator** menu
+	2. In the drop down select url and add the above url http://phishing.com
+	3. Add Tags that will help us to add metadata on this IOC, on our example we want to tag this file IOC with our relevant incident id that this IOC was part of its observation.
+	On the add tag pop-up write **incident 4326** and press Ok
+	 
+	m7-tibladeaddtag.png
+	4. On the **Thread types** select **malicious activity**
+	
+	5. Add an description, and set the confidence level to 80, set up the valid from data to today and the **Valid until** to two week from now
+	6. Press **Apply**
+
+m7-fullnewIOC
+
+	7. Notice to the new IOC on the TI menu.
+	8. Every new IOC we added in the TI menu added automatically to the ThreatIntelligenceIndicator table,
+	You can validate it by opening the **Logs** menu and run the above query 
+
+ThreatIntelligenceIndicator
+| search "http://phishing.com"
+
+
+	9. As we want to view the description column, we need to modify the column order for the menu by select the **column** button on the top bar 
+
+m7-tibladecolumnorder
+
+	10. Once the **Choose columns** opened in the right side, select the **Description**  and drag and drop it by pressing on the 3 dots.
+	11. Press **Apply**
+
+m7-TIlogs
+
+After couple of days we got a new information from our internal TI team that this new IOC is not relevant anymore and we need to delete it.
+
+	11. Select the newly created manual IOC and press delete
+
+m7-deleteTI
+
 
 
 ### Exercise 3: Analytics Rules based on Threat Intelligence data
