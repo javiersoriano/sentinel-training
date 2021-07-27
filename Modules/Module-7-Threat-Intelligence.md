@@ -142,4 +142,4 @@ After couple of days we got a new information from our internal TI team that thi
 #### Task 2: Review and enable Threat Intelligence Matching Analytics rule
 
 
-### Exercise 5: TI workbook
+### Exercise 5: Threat Intelligence Workbook
