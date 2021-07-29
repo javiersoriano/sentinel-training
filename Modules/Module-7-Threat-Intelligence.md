@@ -3,13 +3,16 @@
 #### 🎓 Level: 300 (Intermediate)
 #### ⌛ Estimated time to complete this lab: 20 minutes
 
-This module will show you how to use Azure Sentinel Threat Intelligence (TI) features and all the integration points in the product.
-During this module we will use TI data we ingested in [Module 2](Module-2-Data-Connectors.md) of this training, and will discover how to visualize the data and use it as part of the detection and investigation.
+This module will demonstrate how to use Azure Sentinel Threat Intelligence (TI) features and product integration points.
+During this module we rely on TI data we ingested in [Module 2](Module-2-Data-Connectors.md) so please make sure you completed this model before.
+during this model we will discover how to visualize and use this data as part of investigation and detection.
+
+
 
 
 #### Prerequisites
-This module assumes that you have completed [Module 1](Module-1-Setting-up-the-environment.md), and also [Module 2](Module-2-Data-Connectors.md) that enables the Threat Intelligence TAXII connector.
- 
+This module assumes that you completed [Module 1](Module-1-Setting-up-the-environment.md), and  [Module 2](Module-2-Data-Connectors.md) that enables the Threat Intelligence TAXII connector.
+
 
 ### Exercise 1: Threat Intelligence data connectors
 
@@ -86,7 +89,7 @@ This menu id a visual representation of the ThreatIntelligenceIndicator table.
 In our case we only ingested one type of IOC (IP), but the **Type** filter allow us to filter based on diffrent types.
 If we ingested IOC's from multiple TI data source, the **source** filter can allow us to slice it.
 
-![Acitve](../Images/m7-ITbladeFilter)
+![Acitve](../Images/m7-ITbladeFilter.png)
 
 	
 #### Task 3: add new TI IOC manually in Azure Sentinel Threat intelligence menu
@@ -133,13 +136,14 @@ After couple of days we got a new information from our internal TI team that thi
 ![Acitve](../Images/m7-deleteTI.png)
 
 
-
-
 ### Exercise 3: Analytics Rules based on Threat Intelligence data
 
+one of the main usage of the TI data is on Analytics rules, on this exercise we will review the analytics rules types we have in the product that correlate with our ingested TI.
+
 #### Task 1: Review and enable TI mapping analytics rules
+
 
 #### Task 2: Review and enable Threat Intelligence Matching Analytics rule
 
 
-### Exercise 5: Threat Intelligence Workbook
+### Exercise 5: TI workbook
