@@ -9,10 +9,6 @@
         "PlaybookName": {
             "defaultValue": "Get-GeoFromIpAndTagIncident",
             "type": "string"
-        },
-        "UserName": {
-            "defaultValue": "<username>@<domain>",
-            "type": "string"
         }
     },
     "variables": {
@@ -25,7 +21,7 @@
             "name": "[variables('AzureSentinelConnectionName')]",
             "location": "[resourceGroup().location]",
             "properties": {
-                "displayName": "[parameters('UserName')]",
+                "displayName": "[variables('AzureSentinelConnectionName')]",
                 "customParameterValues": {
                 },
                 "api": {
