@@ -15,7 +15,7 @@ To deploy Azure Sentinel Labs, **you must have a Microsoft Azure subscription**.
 
 ## Last release notes
 
-* Version 0.1 - Azure Sentinel Labs **Beta** 
+* Version 0.2 - Azure Sentinel Labs **Beta** 
 
 ## Modules
 
