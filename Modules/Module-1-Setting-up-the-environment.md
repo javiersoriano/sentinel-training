@@ -69,4 +69,4 @@ In this exercise, we will configure a Playbook that will be later used in the la
 
 ![playbook4](../Images/playbook4.png)
 
-**[Continue to Module 2](./Module-2-Data-Connectors.md)**
+**Congratulations, you have completed Module 1!**. You can now continue to **[Module 2 - Data Connectors](./Module-2-Data-Connectors.md)**

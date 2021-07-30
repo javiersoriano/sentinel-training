@@ -111,4 +111,4 @@ We have 2 options to open the workbook:
 M5-close-incident
 
 
-**[Continue to Module 5](./Module-5-Hunting.md)**
+**Congratulations, you have completed Module 4!**. You can now continue to **[Module 5 - Hunting](./Module-5-Hunting.md)**
