@@ -7,12 +7,6 @@
             "metadata": {
                 "description": "The workspace name should include 4-63 letters, digits or '-'. The '-' shouldn't be the first or the last symbol"
             }
-        },
-        "UserName": {
-            "type": "string",
-            "metadata": {
-                "description": "Username used to authenticate the playbook with your Azure Sentinel environment. Could be the current username you're logged in with."
-            }
         }
     },
     "variables": {
@@ -104,9 +98,6 @@
                 "parameters": {
                     "PlaybookName": {
                         "value": "Get-GeoFromIpAndTagIncident"
-                    },
-                    "UserName": {
-                        "value": "[parameters('UserName')]"
                     }
                 }
             }

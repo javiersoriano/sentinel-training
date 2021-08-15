@@ -89,4 +89,4 @@ We will now prepare the incident for handover to forensics team.
 4. At this point you would hand over the incident to forensics team.
 
 
-**[Continue to Module 6](./Module-6-Watchlists.md)**
+**Congratulations, you have completed Module 5!**. You can now continue to **[Module 6 - Watchlists](./Module-6-Watchlists.md)**

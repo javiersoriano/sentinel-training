@@ -19,39 +19,39 @@ This exercise shows you how to enable the Azure Activity data connector. This co
 
 **NOTE**: To do this exercise, your user must have Reader permissions to any subscription whose logs you want to stream into Azure Sentinel. 
 
-1. Go to you Azure Sentinel workspace and select *Data Connectors* under *Configuration* section.
+1. Go to you Azure Sentinel workspace and select **Data Connectors** under **Configuration** section.
 
 ![azactivity1](../Images/azactivity1.png)
 
-2. In the data connectors screen, type *actvity* in the search bar, select the *Azure Activity* connector and click on *Open connector page*.
+2. In the data connectors screen, type **actvity** in the search bar, select the **Azure Activity** connector and click on **Open connector page**.
 
 ![azactivity2](../Images/azactivity2.png)
 
-3. In the Azure Activity connector page, go to option number 2 in the **Connect your subscriptions through diagnostic settings new pipeline** this connector leverage azure policy.
+3. In the Azure Activity connector page, go to option number 2 **Connect your subscriptions through diagnostic settings new pipeline**. This method leverages Azure Policy and it brings many improvements compred to the old method (more details about these improvements can be found [here](https://techcommunity.microsoft.com/t5/azure-sentinel/moving-azure-activity-connector-to-an-improved-method/ba-p/2479552)).
 
 
-4. Click on the **Launch Azure Policy Assignment wizard** this will redirect you to the policy creation page.
+4. Click on the **Launch Azure Policy Assignment wizard**, this will redirect you to the policy creation page.
 
 ![azactivity3](../Images/azactivity33.png)
 
 
 On the Scope selection select your relevant subscription.
 
-**NOTE**:Please note that if you have owner permission on a management group level you can assign this policy\connector and define collection of the Azure Activity logs form all the subscriptions under the management group level.
-
+**NOTE**: Please note that if you have owner permission on a management group level, you can assign this policy to configure collection of Azure Activity logs form all the subscriptions under the management group.
 
 ![azactivity4](../Images/m2-activity-scope.png)
 
-5. Go to the Parameters tab and on the **Primary Log Analytics workspace** select the workspace of azure Sentinel
+5. Go to the **Parameters** tab. On the **Primary Log Analytics workspace** select the Azure Sentinel workspace:
 
 ![azactivity8](../Images/m2-ws-target-foractivitylogs1.png)
 
 
-5. Press **Review and Create** to save this policy and **Create**.
+6. Press **Review and Create** to save this policy and **Create**.
 
-6. Click on *Next Steps*. Here you see what content is available for the telemetry that is brought into Sentinel by this connector, like Workbooks, Query samples and Analytics Rules.
+7. Click on **Next Steps**. Here you see what content is available for the telemetry that is brought into Sentinel by this connector, like Workbooks, Query samples and Analytics Rules.
 
 ![azactivity7](../Images/azactivity7.png)
+
 
 ### Exercise 2: Enable Azure Defender data connector
 
@@ -59,7 +59,7 @@ This exercise shows you how to enable the Azure Defender data connector. This co
 
 **NOTE**: To do this exercise, your user must have the Security Reader role in the subscription of the logs you stream. If not done already, you will need to enable Azure Defender within Azure Security Center.
 
-1. Go to you Azure Sentinel workspace and select *Data Connectors* under *Configuration* section.
+1. Go to you Azure Sentinel workspace and select **Data Connectors** under *Configuration* section.
 
 2. In the data connectors screen, type *defender* in the search bar, select the *Azure Defender* connector and click on *Open connector page*.
 
@@ -97,4 +97,4 @@ This exercise shows you how to enable the Threat Intelligence - TAXII data conne
 
 5. Click on *Next Steps* at the top of the page and explore what content is available for this connector. In a few seconds, the ThreatIntelligenceIndicator will be populated with IOCs from Anomali's feed.
 
-**[Continue to Module 3](./Module-3-Analytics-Rules.md)**
+**Congratulations, you have completed Module 2!**. You can now continue to **[Module 3 - Analytics Rules](./Module-3-Analytics-Rules.md)**

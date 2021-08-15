@@ -61,3 +61,6 @@ You have received a message from the SOC manager, informing you about a penetrat
 5. Continue through the wizard and save the modified rule.
 
 ![watchlists](../Images/watchlists10.png)
+
+
+**Congratulations, you have completed Module 6!**. You can now continue to **[Module 7 - Threat Intelligence](./Module-7-Threat-Intelligence.md)**

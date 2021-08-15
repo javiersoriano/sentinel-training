@@ -169,4 +169,4 @@ Let's review the incident that was created from this analytics rule.
 7. press on the entity **"AdeleV@contoso.OnMicrosoft.com"** this action will navigate us to the user entity page, this page will give us holistic view on the user entity, with all its activity and related alerts.
 
 
-**[Continue to Module 4](./Module-4-Incident-Management.md)**
+**Congratulations, you have completed Module 3!**. You can now continue to **[Module 4 - Incident Management](./Module-4-Incident-Management.md)**

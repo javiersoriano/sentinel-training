@@ -24,7 +24,6 @@ Permissions to create a resource group in your Azure subscription.
     - **Resource Group**: select an existing resource group or create a new resource group (recommended) that will host the lab resources
     - **Region**: from the drop down, select the Azure region where the lab will be located
     - **Workspace Name**: provide a name for the Azure Sentinel workspace. Please note that the workspace name should include 4-63 letters, digits or '-'. The '-' shouldn't be the first or the last symbol
-    - **User Name**: Username used to authenticate the playbook with your Azure Sentinel environment. This can be the current username you're logged in with. For example: user1@contoso.com.
 
 ![setup1](../Images/setup_1.png)
 
@@ -53,20 +52,20 @@ In this exercise, we will configure a Playbook that will be later used in the la
 
 1. Navigate to the resource group where the lab has been deployed.
 
-2. In the resource group you should see an API Connection resource called *azuresentinel-Get-GeoFromIpAndTagIncident*, click on it.
+2. In the resource group you should see an API Connection resource called **azuresentinel-Get-GeoFromIpAndTagIncident**, click on it.
 
 ![playbook1](../Images/playbook1.png)
 
-3. Click on Edi *API connection* under *General*.
+3. Click on Edi **API connection** under **General**.
 
 ![playbook2](../Images/playbook2.png)
 
-4. Click on *Authorize* and a new window will open to chose an account. Pick the user that you want to authenticate with. This should normally be the same user that you're logged in with.
+4. Click on **Authorize** and a new window will open to chose an account. Pick the user that you want to authenticate with. This should normally be the same user that you're logged in with.
 
 ![playbook3](../Images/playbook3.png)
 
-5. Click *Save*.
+5. Click **Save**.
 
 ![playbook4](../Images/playbook4.png)
 
-**[Continue to Module 2](./Module-2-Data-Connectors.md)**
+**Congratulations, you have completed Module 1!**. You can now continue to **[Module 2 - Data Connectors](./Module-2-Data-Connectors.md)**
