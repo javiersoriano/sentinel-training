@@ -16,7 +16,7 @@
         "kind": "",
         "properties": {
             "displayName": "HighRisApps",
-            "source": "HighRisApps.csv",
+            "source": "HighRiskApps.csv",
             "description": "This Watchlist will monitor the AAD application with the permissions and the risk level",
             "provider": "Custom",
             "isDeleted": false,
