@@ -184,6 +184,10 @@ $status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/senti
 
 Write-Host $status
 
+$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/AuditLogs_Hunting.csv" -EventsTable "AuditLogs"
+
+Write-Host $status
+
 #$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/ABAPAppLog_CL.csv" -EventsTable "ABAPAppLog_CL"
 
 Write-Host $status
