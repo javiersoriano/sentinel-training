@@ -19,9 +19,19 @@ On this exercise we will focus on T1098. to get more understanding on this techn
 
 ![incident1](../Images/hunting-1.png)
 
-3. Assign the incident to yourself and click *Apply*.
+3. In the hunting blade we can see all the hunting queries that the product ship with.
+On the main menu bar we can see the total queries, and results statistics also other advance features like Livestream and Bookmarks.
+On the same top menu we can also find the **Run All queries** button and the column selector menu.
 
-![incident2](../Images/incident2.png)
+![incident2](../Images/hunting-2.png)
+
+From the information we gain from the attack story articles, we understand that we need to focus on specific Techniques.
+The Hunting menu blade organize in a MITRE driven view, and we can easily pivot and refine the queries based on tactics and technique.
+In our case we know that we need to focus on **T1098**.
+
+4.	On the **Add filter** select **Techniques** and press **Apply**
+
+![incident2](../Images/hunting-3.png)
 
 4. Read the description of the incident. As you can see, an IOC related to Solorigate attack has been found. In this case, host **ClientPC** is involved.
 
