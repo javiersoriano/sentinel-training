@@ -33,6 +33,98 @@ In our case we know that we need to focus on **T1098**.
 
 ![incident2](../Images/hunting-3.png)
 
+5.	On the **Techniques** uncheck the **select all* and only select **T1098**
+
+![incident2](../Images/hunting-4.png)
+
+6.	Review all the relevant for this Techniques.
+    In this phase we can multi-select all of queries run them as a batch
+
+To do so, press on the multi-select checkbox and  **Run selected queries (Preview)**
+
+**Note**: in some cases, you will need to modify the selected time range based on the time you deploy the lab.
+
+![incident2](../Images/hunting-5.png)
+
+7.	Press on the query and in the right pane press on **View Results** this will navigate us to the log analytics screen with the raw data.
+
+Once we press on the **Run selected queries (Preview)** the results is start popping on the screen, in our case we intimately spot that the **Adding credentials to legitimate OAuth Applications** query return several of results.
+
+8.	On the **Logs** screen we can see all the data that return from this hunting queries with the parsed fields and columns.
+
+From high overview we can see that we have the actor IP and the username that run this operation.
+9.	Expend one of the results and check the fields, as you can see, we are able to spot the Azure AD application name, the added key name and type the IP, username of the actor and other relevant information that help us understand the specific action.
+
+10.	Our SOC analyst need to find a way to know which application from all the above result set is critical and has a security Risk.
+One way to do it, is to open Azure active directory open each application from the hunting results check their permissions and validate the risk.
+Our SOC analyst open the security playbook and based on the organization knowledge base he understands that our SOC maintain a list for all the AAD application with their risk level.
+
+11.	On the **Logs** screen press on the **+** icon to open a new search tab and run the above query 
+
+ ```powershell
+_GetWatchlist('ReferenceTemplate')
+   ```
+
+   ![incident2](../Images/hunting-8.png)
+
+   As you can see this watchlist store the application name the Risk level and the permissions.
+To be able to correlate it with our hunting results set, we need to run a simple join query.
+
+12.	On the same screen edit the query and join it with the hunting data, copy the above query and run it.
+
+ ```powershell
+_GetWatchlist('ReferenceTemplate')
+| join 
+(
+AuditLogs_CL
+| where OperationName has_any ("Add service principal", "Certificates and secrets management")
+| where Result_s =~ "success"
+| mv-expand target = todynamic(TargetResources_s)
+| where tostring(tostring(parse_json(tostring(parse_json(InitiatedBy_s).user)).userPrincipalName)) has "@" or tostring(parse_json(InitiatedBy_s).displayName) has "@"
+| extend targetDisplayName = tostring(parse_json(TargetResources_s)[0].displayName)
+| extend targetId = tostring(parse_json(TargetResources_s)[0].id)
+| extend targetType = tostring(parse_json(TargetResources_s)[0].type)
+| extend eventtemp = todynamic(TargetResources_s)
+| extend keyEvents = eventtemp[0].modifiedProperties
+| mv-expand keyEvents
+| where keyEvents.displayName =~ "KeyDescription"
+| extend set1 = parse_json(tostring(keyEvents.newValue))
+| extend set2 = parse_json(tostring(keyEvents.oldValue))
+| extend diff = set_difference(set1, set2)
+| where isnotempty(diff)
+| parse diff with * "KeyIdentifier=" keyIdentifier: string ",KeyType=" keyType: string ",KeyUsage=" keyUsage: string ",DisplayName=" keyDisplayName: string "]" *
+| where keyUsage == "Verify" or keyUsage == ""
+| extend AdditionalDetailsttemp = todynamic(AdditionalDetails_s)
+| extend UserAgent = iff(todynamic(AdditionalDetailsttemp[0]).key == "User-Agent", tostring(AdditionalDetailsttemp[0].value), "")
+| extend InitiatedByttemp = todynamic(InitiatedBy_s)
+| extend InitiatingUserOrApp = iff(isnotempty(InitiatedByttemp.user.userPrincipalName), tostring(InitiatedByttemp.user.userPrincipalName), tostring(InitiatedByttemp.app.displayName))
+| extend InitiatingIpAddress = iff(isnotempty(InitiatedByttemp.user.ipAddress), tostring(InitiatedByttemp.user.ipAddress), tostring(InitiatedByttemp.app.ipAddress))
+| project-away diff, set1, set2, eventtemp, AdditionalDetailsttemp, InitiatedByttemp
+| project-reorder
+    TimeGenerated,
+    OperationName,
+    InitiatingUserOrApp,
+    InitiatingIpAddress,
+    UserAgent,
+    targetDisplayName,
+    targetId,
+    targetType,
+    keyDisplayName,
+    keyType,
+    keyUsage,
+    keyIdentifier,
+    CorrelationId
+| extend
+    timestamp = TimeGenerated,
+    AccountCustomEntity = InitiatingUserOrApp,
+    IPCustomEntity = InitiatingIpAddress
+    ) on $left.AppName == $right.targetDisplayName
+| where HighRisk == "Yes"
+   ```
+
+
+
+
 4. Read the description of the incident. As you can see, an IOC related to Solorigate attack has been found. In this case, host **ClientPC** is involved.
 
 ### Exercise 2: Hunting for more evidence
