@@ -133,7 +133,17 @@ Please keep this window open as we will continue to work on it in the next exerc
 As part of our SOC procedures is to use the hunting finding and, in some cases when we are positive that this data can helps us on exciting or a new incident, we will promote the results to a bookmark and will add or create a new incident.
 1.	On the **Logs** screen, open the **join** hunting query from **Exercise 1** mark on the one of raw result and check the bookmark checkbox.
 
+ ![incident2](../Images/hunting-9.png)
 
-   ![incident2](../Images/hunting-9.png)
+2.	On the right bookmark menu modify the **Bookmark Name** to ** victim@buildseccxpninja.onmicrosoft.com added key to purview-spn App with High Risk**
+As you can see when you bookmark a row logs from the investigation results we have the option also to map entities, in our case we will map the **Account** to **victim@buildseccxpninja.onmicrosoft.com**
+The IP to **45.153.160.2**
+We will also add tag to map it to the main attack story, on the add tag write**solorwinds** and press create 
+
+ ![incident2](../Images/hunting-10.png)
+
+
+
+  
 
 **Congratulations, you have completed Module 5!**. You can now continue to **[Module 6 - Watchlists](./Module-6-Watchlists.md)**
