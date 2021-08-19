@@ -11,11 +11,11 @@
   },
     "resources": [
         {
-        "name": "[concat(parameters('workspaceName'), '/Microsoft.SecurityInsights/ReferenceTemplate')]",
+        "name": "[concat(parameters('workspaceName'), '/Microsoft.SecurityInsights/HighRiskApps')]",
         "type": "Microsoft.OperationalInsights/workspaces/providers/Watchlists",
         "kind": "",
         "properties": {
-            "displayName": "HighRisApps",
+            "displayName": "HighRiskApps",
             "source": "HighRiskApps.csv",
             "description": "This Watchlist will monitor the AAD application with the permissions and the risk level",
             "provider": "Custom",

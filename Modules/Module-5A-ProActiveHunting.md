@@ -25,9 +25,9 @@ On the same top menu we can also find the **Run All queries** button and the col
 
 ![incident2](../Images/hunting-2.png)
 
-From the information we gain from the attack story articles, we understand that we need to focus on specific Techniques.
-The Hunting menu blade organize in a MITRE driven view, and we can easily pivot and refine the queries based on tactics and technique.
-In our case we know that we need to focus on **T1098**.
+From the information we gain about the attack story from the articles we read, we understand that we need to keep investigating and delve on the ingested logs in Azure Sentinel and the hunting experience need to be a MITRE oriented that will be focus on specific Techniques.
+Azure Sentinel comes with Hunting feature that expose rich menu that organize with MITRE driven view, and we can easily pivot and refine the hunting queries based on tactics and technique.
+
 
 4.	On the **Add filter** select **Techniques** and press **Apply**
 
@@ -73,7 +73,7 @@ To be able to correlate it with our hunting results set, we need to run a simple
 12.	On the same screen edit the query and join it with the hunting data, copy the above query and run it.
 
  ```powershell
-_GetWatchlist('ReferenceTemplate')
+_GetWatchlist('HighRiskApps')
 | join 
 (
 AuditLogs_CL
@@ -121,6 +121,8 @@ AuditLogs_CL
     ) on $left.AppName == $right.targetDisplayName
 | where HighRisk == "Yes"
    ```
+
+
 The results that we see is the application name from the hunting query that having highRisk 
 Keep this window open as we will continued to work on it on the next exercise.
 
