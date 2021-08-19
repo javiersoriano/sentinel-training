@@ -130,10 +130,10 @@ Please keep this window open as we will continue to work on it in the next exerc
 
 ### Exercise 2: Add bookmark and create incident from hunting data
 
-Part of our SOC exercise is to use the hunting finding and, in some cases, promote it to an incident.
-In our case the action of adding a new key into aa high-risk application is a suspicious operation and we need to make it as evidence and potentially promote it to an incident.
+As part of our SOC procedures is to use the hunting finding and, in some cases when we are positive that this data can helps us on exciting or a new incident, we will promote the results to a bookmark and will add or create a new incident.
+1.	On the **Logs** screen, open the **join** hunting query from **Exercise 1** mark on the one of raw result and check the bookmark checkbox.
 
 
-
+   ![incident2](../Images/hunting-9.png)
 
 **Congratulations, you have completed Module 5!**. You can now continue to **[Module 6 - Watchlists](./Module-6-Watchlists.md)**
