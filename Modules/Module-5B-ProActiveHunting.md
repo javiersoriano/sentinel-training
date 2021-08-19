@@ -128,7 +128,7 @@ We are joining this two datasets base on the application name column and refine 
 
 Please keep this window open as we will continue to work on it in the next exercise.
 
-### Exercise 2: Add bookmark and create incident from hunting data
+### Exercise 2: From raw hunting results logs to a bookmark
 
 As part of our SOC procedures is to use the hunting finding and, in some cases when we are positive that this data can helps us on exciting or a new incident, we will promote the results to a bookmark and will add or create a new incident.
 1.	On the **Logs** screen, open the **join** hunting query from **Exercise 1** mark on the one of raw result and check the bookmark checkbox.
@@ -142,8 +142,24 @@ We will also add tag to map it to the main attack story, on the add tag write**s
 
  ![incident2](../Images/hunting-10.png)
 
+### Exercise 3: Promote a bookmark to an incident 
 
+1. In the Hunting page navigate to the bookmark section and see our newly created bookmark.
 
-  
+ ![incident2](../Images/hunting-12.png)
 
+2.	Please notice that in the right pane, we can investigate a bookmark on the same way as we can investigate an incident.
+
+3.	Select the book from the page and press the **….** and select **Create new Incident**  
+
+ ![incident2](../Images/hunting-13.png)
+
+4.	Select the ** Severity** and assign it to your yourself, press **create** 
+
+ ![incident2](../Images/hunting-14.png)
+
+5.	Navigate to the incident blade and review the newly promote incident we just created 
+
+ ![incident2](../Images/hunting-15.png)
+ 
 **Congratulations, you have completed Module 5!**. You can now continue to **[Module 6 - Watchlists](./Module-6-Watchlists.md)**
