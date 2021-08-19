@@ -123,8 +123,10 @@ AuditLogs_CL
    ```
 
 
-The results that we see is the application name from the hunting query that having highRisk 
-Keep this window open as we will continued to work on it on the next exercise.
+As you can see the above query leverage a Join operator that allow us to join two data streams, the high risk watchlist and the “Adding credentials to legitimate OAuth Applications” hunting results.
+We are joining this two datasets base on the application name column and refine the results only for the High risks apps.
+
+Please keep this window open as we will continue to work on it in the next exercise.
 
 ### Exercise 2: Add bookmark and create incident from hunting data
 
