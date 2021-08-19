@@ -121,77 +121,15 @@ AuditLogs_CL
     ) on $left.AppName == $right.targetDisplayName
 | where HighRisk == "Yes"
    ```
+The results that we see is the application name from the hunting query that having highRisk 
+Keep this window open as we will continued to work on it on the next exercise.
+
+### Exercise 2: Add bookmark and create incident from hunting data
+
+Part of our SOC exercise is to use the hunting finding and, in some cases, promote it to an incident.
+In our case the action of adding a new key into aa high-risk application is a suspicious operation and we need to make it as evidence and potentially promote it to an incident.
 
 
-
-
-4. Read the description of the incident. As you can see, an IOC related to Solorigate attack has been found. In this case, host **ClientPC** is involved.
-
-### Exercise 2: Hunting for more evidence
-
-1. As a next step, you would like to identify any other hosts that might have been compromised as well. As part of your research, you find the following [guidance from Microsoft](https://techcommunity.microsoft.com/t5/azure-sentinel/solarwinds-post-compromise-hunting-with-azure-sentinel/ba-p/1995095). In this article, you can find a query that will do a SolarWinds inventory check query. We will use this query to find any other affected hosts.
-
-2. Switch to *Hunting* in the Azure Sentinel menu.
-
-![incident3](../Images/incident3.png)
-
-3. In the search box, type "solorigate". Select *Solorigate Inventory check* query and click on *Run Query*.
-
-![incident4](../Images/incident4.png)
-
-4. You should see a total of three results. Click on *View Results*
-
-![incident5](../Images/incident5.png)
-
-5. As you can see, besides **ClienPC**, there's two additional computers where the malicious DLL and named pipe has been found. Bookmark all three records, selecting them and then click on on *Add bookmark*.
-
-![incident6](../Images/incident6.png)
-
-6. In the window that appears click on *Create* to create the bookmarks. As you can see entity mapping to already done for you.
-
-![incident7](../Images/incident7.png)
-
-7. Wait until the operation finishes and close the log search using the ✖ at the top right corner. This will land you in the Bookmarks tab inside Hunting menu, where you should see your two new bookmarks created. Select both of them and click on *Incident actions* at the top and then *Add to existing incident*.
-
-![incident8](../Images/incident8.png)
-
-8. From the list, pick the Solorigate incident that is assigned to you, and click *Add*.
-
-![incident9](../Images/incident9.png)
-
-9. At this point you can ask the Operations team to isolate the hosts affected by this incident.
-
-### Exercise 3: Add IOC to Threat Intelligence
-Now, we will add the IP address related to the incident to our list of IOCs, so we can capture any new occurrences of this IOC in our logs.
-
-1. Go back to *Incidents* view.
-
-2. Select the Solorigate incident and copy the IP address entity involved. Notice that you have now more computer entities available (the ones coming from the bookmarks).
-
-![incident10](../Images/incident10.png)
-
-3. Go to the *Threat Intelligence* menu in Azure Sentinel and click *Add new* at the top.
-
-![incident11](../Images/incident11.png)
-
-4. Enter the following details in the *New indicator* dialog. Then click *Apply*.
-
-![incident12](../Images/incident12.png)
-
-### Exercise 4: Hand over incident
-We will now prepare the incident for handover to forensics team.
-
-1. Go to *Incidents* and select the Solorigate incident assigned to you. Click on *View full details*.
-
-2. Move to the *Comments* tab.
-
-![incident13](../Images/incident13.png)
-
-3. Enter information about all the steps performed. As an example:
-
-![incident14](../Images/incident14.png)
-
-4. At this point you would hand over the incident to forensics team.
 
 
 **Congratulations, you have completed Module 5!**. You can now continue to **[Module 6 - Watchlists](./Module-6-Watchlists.md)**
