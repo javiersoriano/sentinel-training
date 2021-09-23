@@ -10,7 +10,7 @@
         }
     },
     "variables": {
-         "_artifactsLocation": "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/"
+         "_artifactsLocation": "https://raw.githubusercontent.com/javiersoriano/sentinel-training/NoWorkspace/"
     },
     "resources": [
         {
@@ -27,14 +27,8 @@
                     "workspaceName": {
                         "value": "[parameters('workspaceName')]"
                     },
-                    "pricingTier": {
-                        "value": "PerGB2018"
-                    },
-                    "dataRetention": {
-                        "value": 90
-                    },
                     "location": {
-                        "value": "[resourceGroup().location]"
+                        "value": "[reference('workspaceName').location]"
                     }
                 }
             }
