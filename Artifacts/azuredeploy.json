@@ -28,7 +28,7 @@
                         "value": "[parameters('workspaceName')]"
                     },
                     "location": {
-                        "value": "[reference('workspaceName').location]"
+                        "value": "[resourceId('Microsoft.OperationalInsights/workspaces/',parameters('workspaceName')).location]"
                     }
                 }
             }
