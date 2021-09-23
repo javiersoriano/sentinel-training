@@ -91,7 +91,7 @@
                         "value": "[concat('Investigation Insights - ',parameters('workspaceName'))]"
                     },
                     "workbookSourceId": {
-                        "value": "[reference('workspaceCreation').outputs.workspaceResourceIdOutput.value]"
+                        "value": "[reference(resourceId('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName')), '2015-11-01-preview').customerId]"
                     }
                 }
             }
