@@ -14,32 +14,9 @@
     },
     "resources": [
         {
-            "name": "workspaceCreation",
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2020-06-01",
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[uri(variables('_artifactsLocation'), 'Artifacts/LinkedTemplates/workspace.json')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "workspaceName": {
-                        "value": "[parameters('workspaceName')]"
-                    },
-                    "location": {
-                        "value": "[reference(resourceId('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName')), '2015-11-01-preview', 'Full').location]"
-                    }
-                }
-            }
-        },
-        {
             "name": "ingestEvents",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-06-01",
-            "dependsOn": [
-                "[resourceId('Microsoft.Resources/deployments', 'workspaceCreation')]"
-            ],
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -48,10 +25,10 @@
                 },
                 "parameters": {
                     "WorkspaceId": {
-                        "value": "[reference('workspaceCreation').outputs.workspaceIdOutput.value]"
+                        "value": "[reference(resourceId('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName')), '2015-11-01-preview').customerId]"
                     },
                     "SharedKey": {
-                        "value": "[reference('workspaceCreation').outputs.workspaceKeyOutput.value]"
+                        "value": "[listKeys(resourceId('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName')), '2015-11-01-preview').primarySharedKey]"
                     }
                 }
             }
@@ -189,6 +166,19 @@
                             "Value": "T1098"
                         }
                     ]
+            }
+        },
+        {
+            "type": "Microsoft.OperationalInsights/workspaces/savedSearches",
+            "apiVersion": "2020-08-01",
+            "name": "imDns",
+            "properties": {
+                "etag": "*",
+                "displayName": " ASIM DNS source agnostic parser",
+                "category": "Security",
+                "FunctionAlias": "imDns",
+                "query": "union isfuzzy=true vimDnsEmpty, vimDnsCiscoUmbrella , vimDnsInfobloxNIOS , vimDnsMicrosoftOMS",
+                "version": 1
             }
         }
     ],
