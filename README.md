@@ -5,7 +5,7 @@
 </p>
 
 
-**IMPORTANT: we moved this project to the official Azure Sentinel repository. To visit the latest version, go here: (http://aka.ms/sentinellabs)[http://aka.ms/sentinellabs] **
+**IMPORTANT: we moved this project to the official Azure Sentinel repository. To visit the latest version, go here: (http://aka.ms/sentinellabs)[http://aka.ms/sentinellabs]**
 
 
 ## Introduction
