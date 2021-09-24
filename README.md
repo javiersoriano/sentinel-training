@@ -4,6 +4,8 @@
 <img src="./Images/sentinel-labs-logo.png?raw=true">
 </p>
 
+<span style="color:blue">IMPORTANT: we moved this project to the official Azure Sentinel repository. To visit the latest version, go here: http://aka.ms/sentinellabs </span>.
+
 ## Introduction
 These labs help you get ramped up with Azure Sentinel and provide hands-on practical experience for product features, capabilities, and scenarios. 
 
